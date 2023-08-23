@@ -78,10 +78,13 @@ console.log(challenge.lastIndexOf("t"));
 // console.log(challenge.)
 
 var Hello = function () {
-var nameten = document.getElementById("name").value;
+  var nameten = document.getElementById("name").value;
+  var output = "";
 
   for (var i = 0; i <= 10; i++) {
-   var test =  i + " Xin chao " + nameten + "<br>"
-   document.getElementById("name hello").innerHTML = test
+    var test = i + " Xin chào " + nameten + "<br>";
+    output += test;
   }
+
+  document.getElementById("name hello").innerHTML = output;
 };
