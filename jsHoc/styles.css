@@ -1,12 +1,86 @@
 * {
   font-family: "Arial", monospace;
-  
+  list-style-type: none;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+html {
+  scroll-behavior: smooth; /* hành vi vuộn chuôt  */
+  font-family: Arial, Helvetica, sans-serif;
 }
 body {
-  background-color: #e4e2ca;
+  background-image: url("img/background.jpg");
 }
 .header {
-  background-color: rgb(96, 219, 219);
+  display: flex;
+  width: 100%;
+  height: 68px;
+  background-color: rgb(206, 206, 206);
+  box-shadow: 0.5px 0px 0.5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 6px 8px ;
+}
+.tab{
+  padding-left: 10px;
+  font-size: 26px;
+  margin-top: 25px;
+  padding-right: 8px;
+  color: rgb(40, 41, 41);
+}
+.header a img{
+  margin-top: -13px;
+  padding-left: 10px;
+}
+.header i:hover{
+  color: aliceblue;
+}
+.header i:hover .subnav{
+  
+  display: block;
+}
+.subnav{
+  display: none;
+  position: fixed;
+  left: 0;
+  padding-left: 0;
+  height: 172px;
+  margin-top: 3px;
+  width: 93px;
+  font-size: 26px;
+  background-color: rgb(206, 206, 206);
+  border-radius: 5px;
+}
+.subnav a{
+  padding: 0 0 16px 0;
+  font-size: 26px;
+  color: rgb(59, 59, 59);
+  
+}
+.subnav li{
+
+  padding: 10px;
+}
+.subnav li:hover{
+  background-color: bisque;
+}
+.nameshop{
+  background-image: url("img/background.jpg");
+  color: #333;
+}
+
+
+
+
+
+
+
+
+/* .header {
+  background-color: rgb(72, 73, 73);
   height: 48px;
   width: 100%;
   position: fixed;
@@ -16,40 +90,31 @@ body {
   z-index: 1;
   box-shadow: 0.5px 0.5px 5px;
 }
-.logo{
-    color: #333;
-    text-align: center;
-    font-size: 35px;
-    margin-top: -33px;
+.nav i {
+  color: antiquewhite;
+  font-size: 24px;
+  margin-left: -33px;
 }
-.nav i{
-    font-size: 24px;
-    margin-left: -33px;
+.nav i:hover {
+  color: azure;
 }
-.nav i:hover{
-    color: azure;
+.subnav li a {
+  text-decoration: none;
+  color: antiquewhite;
+  text-transform: uppercase;
+  list-style-type: none;
+  padding-bottom: -10px;
+  padding-left: 20px;
 }
+.subnav li {
+  padding-bottom: 10px;
+  font-size: 26px;
+  background-color: #333;
 
-
-
-
-
-
-
-#nav{
-    list-style-type: none;
-    display: inline-flex;
-}
-#nav li a{
-    text-decoration: none;
-    padding-right: 26px;
-}
-.input-name {
-  position: fixed;
 }
 .subnav {
-  display: none;
-}
-#nav .nav-arrow-down {
-  font-size: 14px;
-}
+  margin-top: 20px;
+  margin-left: -69px;
+  border: 99px;
+  color: black;
+} */
