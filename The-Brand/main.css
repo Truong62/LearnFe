@@ -23,7 +23,7 @@ html {
 }
 .btn:hover {
   cursor: pointer;
-  color: #000;
+  color: #6e3d3d;
   background-color: #ccc;
 }
 .clear {
