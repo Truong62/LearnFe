@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 body {
-  background-image: url(img/background.jpg);
+  /* background-image: url(img/background.jpg); */
   height: 1000px;
 }
 html {
@@ -22,7 +22,8 @@ html {
   right: 0;
   z-index: 1;
   box-shadow: 1px 1px 5px black;
-}#nav{
+}
+#nav {
   display: inline-block;
 }
 #nav > li {
@@ -60,13 +61,12 @@ html {
   background-color: bisque;
   color: black;
 }
-#nav .subnav a{
+#nav .subnav a {
   padding: 0 10px;
   line-height: 38px;
 }
-#header .seach-icon{
+#header .seach-icon {
   float: right;
-  
 }
 #header .icon-seach {
   font-size: 26px;
@@ -77,20 +77,44 @@ html {
   color: aliceblue;
   float: right;
 }
-#header .icon-seach:hover{
+#header .icon-seach:hover {
   background-color: #f44336;
   cursor: pointer;
 }
 
-
-#slider{
+#slider {
   margin-top: 50px;
   padding-top: 50px;
+  width: 100%;
 }
-#title{
+#title {
   display: inline-block;
+  border-bottom: #333 1px;
+  position: absolute;
+  left: 50%;
 }
-#slider  {
-  background-color: antiquewhite;
 
+#nav-title {
+  width: 100%;
+  color: #333;
+}
+#nav-title > li {
+  display: inline-block;
+  padding: 0 26px;
+}
+#nav-title li a {
+  line-height: 50px;
+  color: #333;
+}
+#nav-title .logo-shop {
+  font-size: 40px;
+  bottom: 0;
+  font-weight: 750;
+}
+#nav-title li:hover a {
+  color: rgb(92, 92, 92);
+}
+#nav-title .item-tad-shop {
+  line-height: 50px;
+  font-weight: 550;
 }
