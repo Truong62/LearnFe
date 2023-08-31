@@ -3,44 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- gg font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,300&display=swap"
-      rel="stylesheet"
-    />
-    <!-- main css  -->
     <link rel="stylesheet" href="styles-main.css" />
-    <title>VC</title>
+    <link rel="stylesheet" href="./themify-icons/themify-icons.css" />
+    <title>Document</title>
   </head>
   <body>
-    <!-- header -->
-    <div class="container">
-      <nav class="navbar">
-        <div class="navbar-logo">
-          <img src="img/logo.svg" alt="website logo" />
+    <div id="main">
+      <div id="header">
+        <!-- header-1 -->
+        <div id="header-1">
+          <form action="">
+            <div class="row-header-search">
+              <div class="col">
+                <input
+                  type="text"
+                  name=""
+                  placeholder="Search product..."
+                  required
+                  id=""
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <button
+              class="seach-icon ti-search"
+              type="submit"
+              aria-label="Tìm kiếm"
+            ></button>
+          </form>
+
+          <div class="cart-icon">
+            <a href="#"> <i class="icon-cart ti-shopping-cart"></i></a>
+          </div>
         </div>
 
-        <ul class="navbar-links">
-          <li class="navbar-link"><a href="#">Work</a></li>
-          <li class="navbar-link"><a href="#">About</a></li>
-          <li class="navbar-link"><a href="#">VC</a></li>
-          <a href="#"><button class="navber-btn">Contact</button></a>
-        </ul>
-
-        <div class="navbar-icons">
-          <div class="navbar-icons"></div>
+        <div id="header-2">
+          <div class="container">
+            <ul class="header-menu">
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">TABLE SIZE</a></li>
+              <li class="logo-shop"><a href="#">NNT</a></li>
+              <li><a href="#">POLICY</a></li>
+              <li><a href="#">SHOP SYSTEM</a></li>
+            </ul>
+          </div>
         </div>
 
-      </nav>
+        <div class="marquee-container">
+          <div class="marquee-content" id="marqueeText">
+            NNT, Hello, thank you for your interest and trust in the shop!                                
+          </div>
+        </div>
+        <script src="title-header.js"></script>
+      </div>
+
+      <div id="slider"></div>
+
+      <div id="content"></div>
+
+      <div id="footer"></div>
     </div>
-    <!-- icon -->
-    <script
-      src="https://kit.fontawesome.com/28c0af3030.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- main js -->
-    <script src="main.js"></script>
   </body>
 </html>
