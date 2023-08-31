@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles-main.css" />
     <link rel="stylesheet" href="./themify-icons/themify-icons.css" />
+    <script src="content-image.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -51,16 +52,33 @@
 
         <div class="marquee-container">
           <div class="marquee-content" id="marqueeText">
-            NNT, Hello, thank you for your interest and trust in the shop!                                
+            Hello, thank you for your interest and trust in the shop! -- Sale up
+            to 50% on all products, new customers receive 10% off their bill
           </div>
         </div>
-        <script src="title-header.js"></script>
       </div>
 
-      <div id="slider"></div>
+      <div id="slider">
+        <div id="home" class="img-content">
+          <img class="slides" src="img/content-2.jpg" width="100%" />
+          <img class="slides" src="img/content-3.jpg" width="100%" />
+          <script>
+            nnt.slideshow(".slides", 3000);
+          </script>
+        </div>
+      </div>
 
       <div id="content"></div>
-
+      <div class="tab-product">
+        <ul class="menu-product">
+          <li>All</li>
+          <li>Vans</li>
+          <li>Jordan</li>
+          <li>Nike</li>
+          <li>Adidas</li>
+          <li>MLB</li>
+        </ul>
+      </div>
       <div id="footer"></div>
     </div>
   </body>
