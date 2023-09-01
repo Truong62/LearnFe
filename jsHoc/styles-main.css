@@ -61,6 +61,10 @@
   text-decoration: none;
   color: #454545;
 }
+.container .header-menu a:hover {
+  color: #8f8f8f;
+}
+
 .container .header-menu .logo-shop {
   font-size: 40px;
 }
@@ -87,7 +91,61 @@
     transform: translateX(-100%);
   }
 }
-.box{
-  height: 1000px;
+.tab-product .menu-product a {
+  color: #454545;
+  text-decoration: none;
+}
+.tab-product .menu-product a:hover {
+  color: #8f8f8f;
+}
+.tab-product {
+  border-bottom: 2px solid #f5f5f5;
+}
+#content > .tab-product li {
+  display: inline-block;
+  font-size: 30px;
+  padding: 20px 5rem;
+  text-align: center;
+}
+#content .tab-product {
+  display: flex;
+  justify-content: center;
 }
 
+#content .namelogoProduct{
+  font-weight: 500;
+  color: #454545;
+  font-size: 28px;
+  width: 100%;
+  padding: 25px 0 0 10.5rem ;
+}
+#content .item-products-vans {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 10px;
+}
+#content .item-product {
+  padding:25px;
+}
+#content .item-product img {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 3%;
+}
+#content .item-product img:hover{
+  opacity: 0.6;
+}
+#content .item-product a {
+  text-decoration: none;
+}
+.item-products-vans > .item-product h5 {
+  color: #454545;
+}
+.infor-porduct > h4 {
+  color: #8f8f8f;
+}
+.item-products-vans .infor-porduct h2 {
+  font-size: 20px;
+  color: #f44336;
+}
