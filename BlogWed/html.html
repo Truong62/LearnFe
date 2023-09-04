@@ -3,44 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* CSS cho tab-product */
-    .tab-product {
-      background-color: #fff;
-      border: 1px solid #ccc;
-      padding: 10px;
-      position: relative;
-      z-index: 1;
-    }
-    /* Thêm các CSS khác tùy ý */
-  </style>
+  <script src="script.js"></script>
+  <title>Document</title>
 </head>
 <body>
-  <div class="tab-product">
-    <ul class="menu-product">
-      <li><a href="#">Vans</a></li>
-      <li><a href="#">Jordan</a></li>
-      <li><a href="#">Nike</a></li>
-      <li><a href="#">Adidas</a></li>
-      <li><a href="#">MLB</a></li>
-    </ul>
-  </div>
-
-  <script>
-    const tabProduct = document.querySelector('.tab-product');
-    const tabProductInitialTop = tabProduct.getBoundingClientRect().top;
-
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-
-      if (scrollY >= tabProductInitialTop) {
-        tabProduct.style.position = 'fixed';
-        tabProduct.style.top = '0';
-      } else {
-        tabProduct.style.position = 'relative';
-        tabProduct.style.top = 'auto';
-      }
-    });
-  </script>
+  
 </body>
 </html>
