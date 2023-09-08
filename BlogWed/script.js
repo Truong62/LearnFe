@@ -59,5 +59,24 @@ console.log(
 console.log(
   "Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead."
 );
-let haha = '10';
+let haha = "10";
 
+let styles = ["jazz", "Blues"];
+console.log(styles);
+styles.push("Rock-n-Roll");
+console.log(styles);
+const middleIndex = Math.floor(styles.length / 2);
+styles[middleIndex] = "Classics";
+console.log(styles);
+styles.shift();
+console.log(styles);
+styles.unshift("Rap", "Reggae");
+console.log(styles);
+
+let arr = ["a", "b"];
+
+arr.push(function () {
+  alert(this);
+});
+
+arr[2]();
