@@ -293,10 +293,10 @@ function multiplyNumeric(obj) {
 }
 let menu = {
   width: 200,
-  height: 300,
+  height: 350,
   title: "My menu cafedev",
 };
 
 multiplyNumeric(menu);
-
 console.log(menu);
+
