@@ -300,3 +300,33 @@ let menu = {
 multiplyNumeric(menu);
 console.log(menu);
 
+var str =
+  '{"company":"facebook","CEO":"Mark Zuckerberg","employees":[{"name": "John","age": 25},{"name": "Anna","age": 29}]}';
+
+var obj = JSON.parse(str);
+
+console.log(obj.company);
+console.log(obj.employees[0].name); 
+console.log(obj.employees[0].age); 
+console.log(obj.employees[1].name); 
+
+
+var  str = '{ "name" : "Code learn" , "age" : 2 }' ;
+
+var obj = JSON.parse(str) ;
+	
+obj.name = "Google Chrome" ;	
+obj.age = 12;
+
+console.log(str); 
+
+
+var text = '{ "name":"John", "birth":"1996-05-15", "city":"New York"}';
+var obj = JSON.parse(text, function (key, value) {
+  if (key == "birth") {
+    return new Date(value);
+  } else {
+    return value;
+  }
+});
+console.log(obj.birth);
