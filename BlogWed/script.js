@@ -330,3 +330,36 @@ var obj = JSON.parse(text, function (key, value) {
   }
 });
 console.log(obj.birth);
+
+var obj = { name: "John", age: 29 };
+
+var text = JSON.stringify(obj);
+
+console.log(text);
+var obj = { name: "John", today: new Date(), city: "New York" };
+var myJSON = JSON.stringify(obj);
+console.log(myJSON);
+
+var obj = {
+  name: "John",
+  age: function () {
+    return 30;
+  },
+  city: "New York",
+};
+var myJSON = JSON.stringify(obj);
+console.log(myJSON);
+
+
+var obj = {
+  name: "John",
+  age: function () {
+    return 30;
+  },
+  city: "New York",
+};
+obj.age = obj.age.toString();
+var myJSON = JSON.stringify(obj);
+console.log(myJSON);
+
+
