@@ -363,3 +363,14 @@ var myJSON = JSON.stringify(obj);
 console.log(myJSON);
 
 
+// onclick	Sự kiện xảy ra khi người dùng click chuột vào phần tử
+// ondblclick	Sự kiện xảy ra khi người dùng click kép chuột vào phần tử
+// onmouseenter	Sự kiện xảy ra khi người dùng di chuyển con trỏ vào phần tử
+// onmouseleave	Sự kiện xảy ra khi người dùng di chuyển con trỏ ra khỏi phần tử.
+// onkeydown	Sự kiện xảy ra khi người dùng đang nhấn một phím
+// onkeyup	Sự kiện xảy ra khi người dùng nhả phím ra
+// oncopy	Sự kiện xảy ra khi người dùng sao chép nội dung của phần tử
+// oncut	Sự kiện xảy ra khi người dùng cắt nội dung của phần tử
+// onpaste	Sự kiện xảy ra khi người dùng dán nội dung vào phần tử
+// onchange	Sự kiện xảy ra khi người dùng thay đổi giá trị của phần tử
+
