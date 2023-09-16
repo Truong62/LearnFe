@@ -306,20 +306,18 @@ var str =
 var obj = JSON.parse(str);
 
 console.log(obj.company);
-console.log(obj.employees[0].name); 
-console.log(obj.employees[0].age); 
-console.log(obj.employees[1].name); 
+console.log(obj.employees[0].name);
+console.log(obj.employees[0].age);
+console.log(obj.employees[1].name);
 
+var str = '{ "name" : "Code learn" , "age" : 2 }';
 
-var  str = '{ "name" : "Code learn" , "age" : 2 }' ;
+var obj = JSON.parse(str);
 
-var obj = JSON.parse(str) ;
-	
-obj.name = "Google Chrome" ;	
+obj.name = "Google Chrome";
 obj.age = 12;
 
-console.log(str); 
-
+console.log(str);
 
 var text = '{ "name":"John", "birth":"1996-05-15", "city":"New York"}';
 var obj = JSON.parse(text, function (key, value) {
@@ -350,7 +348,6 @@ var obj = {
 var myJSON = JSON.stringify(obj);
 console.log(myJSON);
 
-
 var obj = {
   name: "John",
   age: function () {
@@ -361,7 +358,6 @@ var obj = {
 obj.age = obj.age.toString();
 var myJSON = JSON.stringify(obj);
 console.log(myJSON);
-
 
 // onclick	Sự kiện xảy ra khi người dùng click chuột vào phần tử
 // ondblclick	Sự kiện xảy ra khi người dùng click kép chuột vào phần tử
@@ -374,7 +370,6 @@ console.log(myJSON);
 // onpaste	Sự kiện xảy ra khi người dùng dán nội dung vào phần tử
 // onchange	Sự kiện xảy ra khi người dùng thay đổi giá trị của phần tử
 
-
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -383,13 +378,6 @@ const panes = $$(".tab-pane");
 
 const tabActive = $(".tab-item.active");
 const line = $(".tabs .line");
-
-// SonDN fixed - Active size wrong size on first load.
-// Original post: https://www.facebook.com/groups/649972919142215/?multi_permalinks=1175881616551340
-requestIdleCallback(function () {
-  line.style.left = tabActive.offsetLeft + "px";
-  line.style.width = tabActive.offsetWidth + "px";
-});
 
 tabs.forEach((tab, index) => {
   const pane = panes[index];
@@ -405,4 +393,177 @@ tabs.forEach((tab, index) => {
     pane.classList.add("active");
   };
 });
+
+const languages = [
+  "English",
+  "Finnish",
+  "English",
+  "French",
+  "Spanish",
+  "English",
+  "French",
+];
+
+const setOfLanguages = new Set(languages);
+console.log(setOfLanguages);
+
+const a = [4, 5, 8, 9];
+const b = [3, 4, 5, 7];
+let c = [...a, ...b];
+const countries = ["Finland", "Sweden", "Norway"];
+
+const BoTrongNull = new Set();
+console.log(BoTrongNull);
+for (let a = 0; a <= 10; a++) {
+  BoTrongNull.add(a);
+}
+console.log(BoTrongNull);
+
+BoTrongNull.delete(4);
+console.log(BoTrongNull);
+BoTrongNull.clear();
+console.log(BoTrongNull);
+
+const languages1 = ["English", "Finnish", "English", "French", "Spanish"];
+console.log(languages1);
+console.log(c);
+
+const usersText = `{
+"users":[
+  {
+    "firstName":"Asabeneh",
+    "lastName":"Yetayeh",
+    "age":250,
+    "email":"asab@asb.com"
+  },
+  {
+    "firstName":"Alex",
+    "lastName":"James",
+    "age":25,
+    "email":"alex@alex.com"
+  },
+  {
+  "firstName":"Lidiya",
+  "lastName":"Tekle",
+  "age":28,
+  "email":"lidiya@lidiya.com"
+  }
+]
+}`;
+
+const usersObj = JSON.parse(usersText, undefined, 4);
+
+
+const skills = ["HTML", "CSS", "JS", "React", "Node", "Python"];
+let age = 250;
+let isMarried = true;
+const student = {
+  firstName: "Asabeneh",
+  lastName: "Yetayehe",
+  age: 250,
+  isMarried: true,
+  skills: ["HTML", "CSS", "JS", "React", "Node", "Python"],
+};
+const txt = `{
+    "Alex": {
+        "email": "alex@alex.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 30
+    },
+    "Asab": {
+        "email": "asab@asab.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Redux",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node"
+        ],
+        "age": 25,
+        "isLoggedIn": false,
+        "points": 50
+    },
+    "Brook": {
+        "email": "daniel@daniel.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux"
+        ],
+        "age": 30,
+        "isLoggedIn": true,
+        "points": 50
+    },
+    "Daniel": {
+        "email": "daniel@alex.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    },
+    "John": {
+        "email": "john@john.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux",
+            "Node.js"
+        ],
+        "age": 20,
+        "isLoggedIn": true,
+        "points": 50
+    },
+    "Thomas": {
+        "email": "thomas@thomas.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    },
+    "Paul": {
+        "email": "paul@paul.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    }
+}
+`;
+
+const chaegrday16 = JSON.parse(txt);
+console.log(chaegrday16)
+// JSON.stringify(txt,undefined,4)
+const txtjson = JSON.stringify(chaegrday16, ["Thomas"], 4);
+console.log(txtjson);
 
