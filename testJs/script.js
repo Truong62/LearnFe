@@ -567,3 +567,13 @@ console.log(chaegrday16)
 const txtjson = JSON.stringify(chaegrday16, ["Thomas"], 4);
 console.log(txtjson);
 
+const dog={}
+console.log(dog)
+
+for(let i = 0;i<=10;i++){
+  let line =' '
+  for(let j = 0; j<=i;j++){
+     line += '*'
+  }
+  console.log(line)
+}
