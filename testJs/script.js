@@ -910,3 +910,116 @@ let catNames = [];
 //     console.error("There was a problem with the fetch operation:", error);
 //   });
 console.clear()
+
+//day19
+function outerFunction() {
+  let count = 0;
+  function innerFunction() {
+    count++;
+    return count;
+  }
+
+  return innerFunction;
+}
+const innerFunc = outerFunction();
+
+console.log(innerFunc());
+console.log(innerFunc());
+console.log(innerFunc());
+
+function outerFunction1() {
+  let count = 0;
+  function plusOne() {
+    count++;
+    return count;
+  }
+  function minusOne() {
+    count--;
+    return count;
+  }
+
+  return {
+    plusOne: plusOne(),
+    minusOne: minusOne(),
+  };
+}
+const innerFuncs = outerFunction1();
+
+console.log(innerFuncs.plusOne);
+console.log(innerFuncs.minusOne);
+
+function off(){
+  let outerVar = "Tôi Test Thử..."
+  function off2(){
+    console.log(outerVar)
+  }
+  return outerVar
+}
+console.log(off())
+
+function barChucNang(){
+  function cn1(){
+    console.log("Chức năng 1")
+  }
+  function cn2() {
+    console.log("Chức năng 2");
+  }
+  function cn3() {
+    console.log("Chức năng 3");
+  }
+  return {
+    function1: cn1,
+    function2: cn2,
+    function3: cn3,
+  };
+}
+const inrachucnang = barChucNang()
+inrachucnang.function1()
+inrachucnang.function2();
+inrachucnang.function3();
+
+function PersonAccount(firstName, lastName, income, expenses) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.income = income || [];
+  this.expenses = expenses || [];
+
+  this.totalIncome = function () {
+    return this.income.reduce((total, income) => total + income.amount, 0);
+  };
+
+  this.totalExpense = function () {
+    return this.expenses.reduce((total, expense) => total + expense.amount, 0);
+  };
+
+  this.accountInfo = function () {
+    return `Tên: ${this.firstName} ${
+      this.lastName
+    }, Thu nhập: ${this.totalIncome()}, Chi phí: ${this.totalExpense()}`;
+  };
+
+  this.addIncome = function (description, amount) {
+    this.income.push({ description, amount });
+  };
+
+  this.addExpense = function (description, amount) {
+    this.expenses.push({ description, amount });
+  };
+
+  this.accountBalance = function () {
+    return this.totalIncome() - this.totalExpense();
+  };
+}
+
+const myAccount = new PersonAccount(
+  "John",
+  "Doe",
+  [{ description: "Lương", amount: 5000 }],
+  [{ description: "Mua sắm", amount: 1000 }]
+);
+
+// Thêm một khoản thu nhập mới
+myAccount.addIncome("Thưởng", 1000);
+myAccount.addExpense("Hóa đơn điện", 200);
+console.log(myAccount.accountInfo());
+console.log(`Số dư tài khoản: ${myAccount.accountBalance()}`);
