@@ -453,112 +453,6 @@ const usersText = `{
 
 const usersObj = JSON.parse(usersText, undefined, 4);
 
-const skills = ["HTML", "CSS", "JS", "React", "Node", "Python"];
-let age = 250;
-let isMarried = true;
-const student = {
-  firstName: "Asabeneh",
-  lastName: "Yetayehe",
-  age: 250,
-  isMarried: true,
-  skills: ["HTML", "CSS", "JS", "React", "Node", "Python"],
-};
-const txt = `{
-    "Alex": {
-        "email": "alex@alex.com",
-        "skills": [
-            "HTML",
-            "CSS",
-            "JavaScript"
-        ],
-        "age": 20,
-        "isLoggedIn": false,
-        "points": 30
-    },
-    "Asab": {
-        "email": "asab@asab.com",
-        "skills": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Redux",
-            "MongoDB",
-            "Express",
-            "React",
-            "Node"
-        ],
-        "age": 25,
-        "isLoggedIn": false,
-        "points": 50
-    },
-    "Brook": {
-        "email": "daniel@daniel.com",
-        "skills": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React",
-            "Redux"
-        ],
-        "age": 30,
-        "isLoggedIn": true,
-        "points": 50
-    },
-    "Daniel": {
-        "email": "daniel@alex.com",
-        "skills": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Python"
-        ],
-        "age": 20,
-        "isLoggedIn": false,
-        "points": 40
-    },
-    "John": {
-        "email": "john@john.com",
-        "skills": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React",
-            "Redux",
-            "Node.js"
-        ],
-        "age": 20,
-        "isLoggedIn": true,
-        "points": 50
-    },
-    "Thomas": {
-        "email": "thomas@thomas.com",
-        "skills": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React"
-        ],
-        "age": 20,
-        "isLoggedIn": false,
-        "points": 40
-    },
-    "Paul": {
-        "email": "paul@paul.com",
-        "skills": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "MongoDB",
-            "Express",
-            "React",
-            "Node"
-        ],
-        "age": 20,
-        "isLoggedIn": false,
-        "points": 40
-    }
-}
-`;
 for (let i = 0; i <= 10; i++) {
   let line = " ";
   for (let j = 0; j <= i; j++) {
@@ -567,11 +461,10 @@ for (let i = 0; i <= 10; i++) {
   console.log(line);
 }
 
-const chaegrday16 = JSON.parse(txt);
-console.log(chaegrday16);
+
 // JSON.stringify(txt,undefined,4)
-const txtjson = JSON.stringify(chaegrday16, ["Thomas"], 4);
-console.log(txtjson);
+// const txtjson = JSON.stringify(chaegrday16, ["Thomas"], 4);
+// console.log(txtjson);
 
 const dog = {};
 console.log(dog);
@@ -769,4 +662,142 @@ console.log(myDog)
 
 console.clear()
 
-//day 16
+// //day 16
+
+const skills = ["HTML", "CSS", "JS", "React", "Node", "Python"];
+let age = 250;
+let isMarried = true;
+const student = {
+  firstName: "Asabeneh",
+  lastName: "Yetayehe",
+  age: 250,
+  isMarried: true,
+  skills: ["HTML", "CSS", "JS", "React", "Node", "Python"],
+};
+const txt = `{
+    "Alex": {
+        "email": "alex@alex.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 30
+    },
+    "Asab": {
+        "email": "asab@asab.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Redux",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node"
+        ],
+        "age": 25,
+        "isLoggedIn": false,
+        "points": 50
+    },
+    "Brook": {
+        "email": "daniel@daniel.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux"
+        ],
+        "age": 30,
+        "isLoggedIn": true,
+        "points": 50
+    },
+    "Daniel": {
+        "email": "daniel@alex.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    },
+    "John": {
+        "email": "john@john.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux",
+            "Node.js"
+        ],
+        "age": 20,
+        "isLoggedIn": true,
+        "points": 50
+    },
+    "Thomas": {
+        "email": "thomas@thomas.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    },
+    "Paul": {
+        "email": "paul@paul.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    }
+}
+`;
+const txtJSON = JSON.stringify(skills);
+
+console.log(txtJSON);
+const data16 = JSON.parse(txt)
+for (const key in data16) {
+  if (data16.hasOwnProperty(key)) {
+    const ageUser16 = data16[key].age;
+    console.log(ageUser16);
+  }
+}
+
+const studentSubset = {
+  firstName: student.firstName,
+  lastName: student.lastName,
+  skills: student.skills,
+};
+const studentJSON = JSON.stringify(studentSubset);
+
+console.log(studentJSON);
+
+console.log(JSON.parse(studentJSON));
+
+
+const data = JSON.parse(txt);
+
+console.log(data);
+localStorage.setItem("key", "value");
+console.log(localStorage);
+
+localStorage.setItem("age", 200);
+console.log(localStorage);
