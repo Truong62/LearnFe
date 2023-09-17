@@ -453,7 +453,6 @@ const usersText = `{
 
 const usersObj = JSON.parse(usersText, undefined, 4);
 
-
 const skills = ["HTML", "CSS", "JS", "React", "Node", "Python"];
 let age = 250;
 let isMarried = true;
@@ -569,18 +568,18 @@ for (let i = 0; i <= 10; i++) {
 }
 
 const chaegrday16 = JSON.parse(txt);
-console.log(chaegrday16)
+console.log(chaegrday16);
 // JSON.stringify(txt,undefined,4)
 const txtjson = JSON.stringify(chaegrday16, ["Thomas"], 4);
 console.log(txtjson);
 
-const dog={}
-console.log(dog)
+const dog = {};
+console.log(dog);
 
 dog.name;
 dog.legs;
 dog.color;
-dog.age; 
+dog.age;
 dog.bark_property = "woof woof";
 
 const names = ["Asabeneh", "Brook", "David", "John"];
@@ -618,7 +617,6 @@ const userday13 = [
 ];
 console.table(userday13);
 
-
 const countriesday13 = [
   ["Finland", "Helsinki"],
   ["Sweden", "Stockholm"],
@@ -646,7 +644,6 @@ console.timeEnd("forEach loop");
 console.info("30 Days Of JavaScript challenge is trending on Github");
 console.info("30 Days Of fullStack challenge might be released");
 console.info("30 Days Of HTML and CSS challenge might be released");
-
 
 const namesday13 = ["Asabeneh", "Brook", "David", "John"];
 const countrie13 = [
@@ -705,5 +702,71 @@ console.log(user13);
 console.log(users13);
 console.groupEnd();
 
-
 console.clear();
+console.table(user13);
+console.table({ name: user13.name , title: user13.title });
+
+console.group("Địa chỉ"); 
+console.log("Quốc gia:", user13.country);
+console.log("Thành phố:", user13.city);
+console.groupEnd(); 
+
+console.assert(10 > 2 * 10 , "sai");
+console.warn("canh bao");
+console.error("error");
+
+const array = Array.from({ length: 1000000 }, (_, i) => i);
+
+console.time("while");
+let i = 0;
+while (i < array.length) {
+  i++;
+}
+console.timeEnd("while");
+
+console.time("for");
+for (let i = 0; i < array.length; i++) {
+}
+console.timeEnd("for");
+
+console.time("forEach");
+array.forEach((item) => {
+});
+console.timeEnd("forEach");
+
+console.clear()
+
+//day 14
+
+try {
+  let lastName = "Yetayeh";
+  let fullName14 = fistName + " " + lastName;
+} catch (err) {
+  console.error(err);
+} finally {
+  console.log("In any case I will be executed");
+}
+
+console.clear()
+
+//day 15
+
+class Zoo {
+  constructor(name,age,color){
+    this.name = name;
+    this.age = age
+    this.color = color
+  }
+}
+class Dog extends Zoo{
+  constructor (name,age,color){
+    super(name,age,color) 
+  }
+}
+
+const myDog = new Dog("Buddy", 3, "Nâu", "Golden Retriever");
+console.log(myDog)
+
+console.clear()
+
+//day 16
