@@ -560,6 +560,13 @@ const txt = `{
     }
 }
 `;
+for (let i = 0; i <= 10; i++) {
+  let line = " ";
+  for (let j = 0; j <= i; j++) {
+    line += "*";
+  }
+  console.log(line);
+}
 
 const chaegrday16 = JSON.parse(txt);
 console.log(chaegrday16)
@@ -570,10 +577,133 @@ console.log(txtjson);
 const dog={}
 console.log(dog)
 
-for(let i = 0;i<=10;i++){
-  let line =' '
-  for(let j = 0; j<=i;j++){
-     line += '*'
-  }
-  console.log(line)
+dog.name;
+dog.legs;
+dog.color;
+dog.age; 
+dog.bark_property = "woof woof";
+
+const names = ["Asabeneh", "Brook", "David", "John"];
+console.table(names);
+
+const userday13 = [
+  {
+    name: "Asabeneh",
+    title: "Programmer",
+    country: "Finland",
+    city: "Helsinki",
+    age: 250,
+  },
+  {
+    name: "Eyob",
+    title: "Teacher",
+    country: "Sweden",
+    city: "London",
+    age: 25,
+  },
+  {
+    name: "Asab",
+    title: "Instructor",
+    country: "Norway",
+    city: "Oslo",
+    age: 22,
+  },
+  {
+    name: "Matias",
+    title: "Developer",
+    country: "Denmark",
+    city: "Copenhagen",
+    age: 28,
+  },
+];
+console.table(userday13);
+
+
+const countriesday13 = [
+  ["Finland", "Helsinki"],
+  ["Sweden", "Stockholm"],
+  ["Norway", "Oslo"],
+];
+
+console.time("Regular for loop");
+for (let i = 0; i < countriesday13.length; i++) {
+  console.log(countriesday13[i][0], countriesday13[i][1]);
 }
+console.timeEnd("Regular for loop");
+
+console.time("for of loop");
+for (const [name, city] of countriesday13) {
+  console.log(name, city);
+}
+console.timeEnd("for of loop");
+
+console.time("forEach loop");
+countriesday13.forEach(([name, city]) => {
+  console.log(name, city);
+});
+console.timeEnd("forEach loop");
+
+console.info("30 Days Of JavaScript challenge is trending on Github");
+console.info("30 Days Of fullStack challenge might be released");
+console.info("30 Days Of HTML and CSS challenge might be released");
+
+
+const namesday13 = ["Asabeneh", "Brook", "David", "John"];
+const countrie13 = [
+  ["Finland", "Helsinki"],
+  ["Sweden", "Stockholm"],
+  ["Norway", "Oslo"],
+];
+const user13 = {
+  name: "Asabeneh",
+  title: "Programmer",
+  country: "Finland",
+  city: "Helsinki",
+  age: 250,
+};
+const users13 = [
+  {
+    name: "Asabeneh",
+    title: "Programmer",
+    country: "Finland",
+    city: "Helsinki",
+    age: 250,
+  },
+  {
+    name: "Eyob",
+    title: "Teacher",
+    country: "Sweden",
+    city: "London",
+    age: 25,
+  },
+  {
+    name: "Asab",
+    title: "Instructor",
+    country: "Norway",
+    city: "Oslo",
+    age: 22,
+  },
+  {
+    name: "Matias",
+    title: "Developer",
+    country: "Denmark",
+    city: "Copenhagen",
+    age: 28,
+  },
+];
+
+console.group("Names");
+console.log(namesday13);
+console.groupEnd();
+
+console.group("Countries");
+console.log(countrie13);
+console.groupEnd();
+
+console.group("Users");
+console.log(user13);
+console.log(users13);
+console.groupEnd();
+
+
+console.clear();
