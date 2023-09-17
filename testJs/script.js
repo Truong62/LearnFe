@@ -461,7 +461,6 @@ for (let i = 0; i <= 10; i++) {
   console.log(line);
 }
 
-
 // JSON.stringify(txt,undefined,4)
 // const txtjson = JSON.stringify(chaegrday16, ["Thomas"], 4);
 // console.log(txtjson);
@@ -597,14 +596,14 @@ console.groupEnd();
 
 console.clear();
 console.table(user13);
-console.table({ name: user13.name , title: user13.title });
+console.table({ name: user13.name, title: user13.title });
 
-console.group("Địa chỉ"); 
+console.group("Địa chỉ");
 console.log("Quốc gia:", user13.country);
 console.log("Thành phố:", user13.city);
-console.groupEnd(); 
+console.groupEnd();
 
-console.assert(10 > 2 * 10 , "sai");
+console.assert(10 > 2 * 10, "sai");
 console.warn("canh bao");
 console.error("error");
 
@@ -618,16 +617,14 @@ while (i < array.length) {
 console.timeEnd("while");
 
 console.time("for");
-for (let i = 0; i < array.length; i++) {
-}
+for (let i = 0; i < array.length; i++) {}
 console.timeEnd("for");
 
 console.time("forEach");
-array.forEach((item) => {
-});
+array.forEach((item) => {});
 console.timeEnd("forEach");
 
-console.clear()
+console.clear();
 
 //day 14
 
@@ -640,27 +637,27 @@ try {
   console.log("In any case I will be executed");
 }
 
-console.clear()
+console.clear();
 
 //day 15
 
 class Zoo {
-  constructor(name,age,color){
+  constructor(name, age, color) {
     this.name = name;
-    this.age = age
-    this.color = color
+    this.age = age;
+    this.color = color;
   }
 }
-class Dog extends Zoo{
-  constructor (name,age,color){
-    super(name,age,color) 
+class Dog extends Zoo {
+  constructor(name, age, color) {
+    super(name, age, color);
   }
 }
 
 const myDog = new Dog("Buddy", 3, "Nâu", "Golden Retriever");
-console.log(myDog)
+console.log(myDog);
 
-console.clear()
+console.clear();
 
 // //day 16
 
@@ -773,7 +770,7 @@ const txt = `{
 const txtJSON = JSON.stringify(skills);
 
 console.log(txtJSON);
-const data16 = JSON.parse(txt)
+const data16 = JSON.parse(txt);
 for (const key in data16) {
   if (data16.hasOwnProperty(key)) {
     const ageUser16 = data16[key].age;
@@ -791,7 +788,6 @@ const studentJSON = JSON.stringify(studentSubset);
 console.log(studentJSON);
 
 console.log(JSON.parse(studentJSON));
-
 
 const data = JSON.parse(txt);
 console.log(data);
@@ -812,41 +808,41 @@ localStorage.setItem("city", "New York");
 const firstName17 = localStorage.getItem("firstName");
 console.log(firstName17);
 
-const Sv17={
+const Sv17 = {
   name: "nug",
-  ho:"nguyen",
+  ho: "nguyen",
   tuoi: "16",
   skill: "hacker",
-}
+};
 
-const SvToJSON = JSON.stringify(Sv17)
-localStorage.setItem("SvToJSON" , SvToJSON)
+const SvToJSON = JSON.stringify(Sv17);
+localStorage.setItem("SvToJSON", SvToJSON);
 
 console.log(JSON.parse(localStorage.getItem("SvToJSON")).name);
 console.log(JSON.parse(localStorage.getItem("SvToJSON")).tuoi);
 console.log(JSON.parse(localStorage.getItem("SvToJSON")).skill);
 
-const userAccount17 ={
-  name:""
-}
+const userAccount17 = {
+  name: "",
+};
 
 //day18
 //Callback
-const doSomething = callback => {
+const doSomething = (callback) => {
   setTimeout(() => {
-    const skills = ['HTML', 'CSS', 'JS']
-    callback('It did not go well', skills)
-  }, 2000)
-}
+    const skills = ["HTML", "CSS", "JS"];
+    callback("It did not go well", skills);
+  }, 2000);
+};
 
 const callback = (err, result) => {
   if (err) {
-    return console.log(err)
+    return console.log(err);
   }
-  return console.log(result)
-}
+  return console.log(result);
+};
 
-doSomething(callback)
+doSomething(callback);
 
 doSomething((err, result) => {
   if (err) {
@@ -854,3 +850,63 @@ doSomething((err, result) => {
   }
   return console.log(result);
 });
+
+const doPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const skills = ["HTML", "CSS", "JS"];
+    if (skills.length > 0) {
+      resolve(skills);
+    } else {
+      reject("Something wrong has happened");
+    }
+  }, 2000);
+});
+
+doPromise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => console.log(error));
+
+const countriesAPI = "https://restcountries.com/v2/all";
+const catsAPI = "https://api.thecatapi.com/v1/breeds";
+
+fetch(countriesAPI)
+  .then((DocAPItoJSON) => DocAPItoJSON.json())
+  .then((data) => {
+    data.forEach((country) => {
+      const name = country.name;
+      const capital = country.capital;
+      const languages = country.languages
+        .map((language) => language.name)
+        .join(", ");
+      const population = country.population;
+      const area = country.area;
+
+      console.log("Country:", name);
+      console.log("Capital:", capital);
+      console.log("Languages:", languages);
+      console.log("Population:", population);
+      console.log("Area:", area);
+      console.log("------------------------");
+    });
+})
+let catNames = [];
+
+fetch(catsAPI)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    data.forEach((cat) => {
+      catNames.push(cat.name);
+    });
+    console.log("Cat Names:", JSON.parse(catNames));
+  })
+  .catch((error) => {
+    console.error("There was a problem with the fetch operation:", error);
+  });
+console.clear()
