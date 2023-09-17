@@ -828,85 +828,85 @@ const userAccount17 = {
 
 //day18
 //Callback
-const doSomething = (callback) => {
-  setTimeout(() => {
-    const skills = ["HTML", "CSS", "JS"];
-    callback("It did not go well", skills);
-  }, 2000);
-};
+// const doSomething = (callback) => {
+//   setTimeout(() => {
+//     const skills = ["HTML", "CSS", "JS"];
+//     callback("It did not go well", skills);
+//   }, 2000);
+// };
 
-const callback = (err, result) => {
-  if (err) {
-    return console.log(err);
-  }
-  return console.log(result);
-};
+// const callback = (err, result) => {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   return console.log(result);
+// };
 
-doSomething(callback);
+// doSomething(callback);
 
-doSomething((err, result) => {
-  if (err) {
-    return console.log(err);
-  }
-  return console.log(result);
-});
+// doSomething((err, result) => {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   return console.log(result);
+// });
 
-const doPromise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    const skills = ["HTML", "CSS", "JS"];
-    if (skills.length > 0) {
-      resolve(skills);
-    } else {
-      reject("Something wrong has happened");
-    }
-  }, 2000);
-});
+// const doPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const skills = ["HTML", "CSS", "JS"];
+//     if (skills.length > 0) {
+//       resolve(skills);
+//     } else {
+//       reject("Something wrong has happened");
+//     }
+//   }, 2000);
+// });
 
-doPromise
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => console.log(error));
+// doPromise
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => console.log(error));
 
 const countriesAPI = "https://restcountries.com/v2/all";
 const catsAPI = "https://api.thecatapi.com/v1/breeds";
 
-fetch(countriesAPI)
-  .then((DocAPItoJSON) => DocAPItoJSON.json())
-  .then((data) => {
-    data.forEach((country) => {
-      const name = country.name;
-      const capital = country.capital;
-      const languages = country.languages
-        .map((language) => language.name)
-        .join(", ");
-      const population = country.population;
-      const area = country.area;
+// fetch(countriesAPI)
+//   .then((DocAPItoJSON) => DocAPItoJSON.json())
+//   .then((data) => {
+//     data.forEach((country) => {
+//       const name = country.name;
+//       const capital = country.capital;
+//       const languages = country.languages
+//         .map((language) => language.name)
+//         .join(", ");
+//       const population = country.population;
+//       const area = country.area;
 
-      console.log("Country:", name);
-      console.log("Capital:", capital);
-      console.log("Languages:", languages);
-      console.log("Population:", population);
-      console.log("Area:", area);
-      console.log("------------------------");
-    });
-})
+//       console.log("Country:", name);
+//       console.log("Capital:", capital);
+//       console.log("Languages:", languages);
+//       console.log("Population:", population);
+//       console.log("Area:", area);
+//       console.log("------------------------");
+//     });
+// })
 let catNames = [];
 
-fetch(catsAPI)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return response.json();
-  })
-  .then((data) => {
-    data.forEach((cat) => {
-      catNames.push(cat.name);
-    });
-    console.log("Cat Names:", JSON.parse(catNames));
-  })
-  .catch((error) => {
-    console.error("There was a problem with the fetch operation:", error);
-  });
+// fetch(catsAPI)
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("Network response was not ok");
+//     }
+//     return response.json();
+//   })
+//   .then((data) => {
+//     data.forEach((cat) => {
+//       catNames.push(cat.name);
+//     });
+//     console.log("Cat Names:", JSON.parse(catNames));
+//   })
+//   .catch((error) => {
+//     console.error("There was a problem with the fetch operation:", error);
+//   });
 console.clear()
