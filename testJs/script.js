@@ -794,10 +794,63 @@ console.log(JSON.parse(studentJSON));
 
 
 const data = JSON.parse(txt);
-
 console.log(data);
+
+//17
 localStorage.setItem("key", "value");
 console.log(localStorage);
 
 localStorage.setItem("age", 200);
 console.log(localStorage);
+
+localStorage.setItem("firstName", "John");
+localStorage.setItem("lastName", "Doe");
+localStorage.setItem("age", "30");
+localStorage.setItem("country", "USA");
+localStorage.setItem("city", "New York");
+
+const firstName17 = localStorage.getItem("firstName");
+console.log(firstName17);
+
+const Sv17={
+  name: "nug",
+  ho:"nguyen",
+  tuoi: "16",
+  skill: "hacker",
+}
+
+const SvToJSON = JSON.stringify(Sv17)
+localStorage.setItem("SvToJSON" , SvToJSON)
+
+console.log(JSON.parse(localStorage.getItem("SvToJSON")).name);
+console.log(JSON.parse(localStorage.getItem("SvToJSON")).tuoi);
+console.log(JSON.parse(localStorage.getItem("SvToJSON")).skill);
+
+const userAccount17 ={
+  name:""
+}
+
+//day18
+//Callback
+const doSomething = callback => {
+  setTimeout(() => {
+    const skills = ['HTML', 'CSS', 'JS']
+    callback('It did not go well', skills)
+  }, 2000)
+}
+
+const callback = (err, result) => {
+  if (err) {
+    return console.log(err)
+  }
+  return console.log(result)
+}
+
+doSomething(callback)
+
+doSomething((err, result) => {
+  if (err) {
+    return console.log(err);
+  }
+  return console.log(result);
+});
