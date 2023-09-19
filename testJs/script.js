@@ -2065,13 +2065,289 @@ console.log(firstTitle);
 
 console.clear();
 const firstParagraph = document.querySelector("p");
-console.log(firstParagraph.textContent);
+// console.log(firstParagraph.textContent);
 
 const ids = ["d1", "d2", "d3", "d4"];
 for (const id of ids) {
   const paragraph = document.querySelector(`#${id}`);
-  console.log(paragraph.textContent);
+  // console.log(paragraph.textContent);
 }
 
 const paragraphs = document.querySelectorAll("p");
 console.log(paragraphs);
+for (const paragraph2 of paragraphs) {
+  console.log(paragraph2.textContent);
+}
+const fourthParagraph = paragraphs[3];
+// fourthParagraph.textContent = "Fourth Paragraph";
+
+for (let i = 0; i < paragraphs.length; i++) {
+  paragraphs[i].id = `paragraph${i + 1}`;
+  paragraphs[i].classList.add("custom-class");
+}
+paragraphs.forEach((paragraph, index) => {
+  paragraph.style.color = "blue";
+  paragraph.style.backgroundColor = "lightgray";
+  paragraph.style.border = "1px solid black";
+  paragraph.style.fontSize = "16px";
+  paragraph.style.fontFamily = "Arial, sans-serif";
+});
+paragraphs.forEach((paragraph, index) => {
+  if (index % 2 === 0) {
+    paragraph.style.color = "green";
+  } else {
+    paragraph.style.color = "red";
+  }
+});
+paragraphs.forEach((paragraph, index) => {
+  // Đặt nội dung văn bản cho từng đoạn văn
+  paragraph.textContent = `Đoạn văn ${index + 1}`;
+  // Đặt id cho từng đoạn văn
+  paragraph.id = `paragraph${index + 1}`;
+  // Đặt lớp cho từng đoạn văn
+  paragraph.classList.add("custom-class");
+});
+
+let title = document.createElement("h1");
+title.className = "title";
+title.style.fontSize = "24px";
+title.textContent = "Creating HTML element DOM Day 2";
+
+console.log(title.textContent);
+
+function isPrime(number) {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i * i <= number; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const divDay23 = document.getElementById("divContainer");
+for (let i = 1; i <= 100; i++) {
+  const newDiv = document.createElement("div");
+  newDiv.textContent = i;
+  if (i % 2 === 0) {
+    newDiv.style.backgroundColor = "green";
+  } else if (i / 2 > 0) {
+    newDiv.style.backgroundColor = "yellow";
+  }
+  if (isPrime(i)) {
+    newDiv.style.backgroundColor = "red";
+  }
+
+  divContainer.appendChild(newDiv);
+}
+
+const countriesALL = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Brazil",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cabo Verde",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Colombia",
+  "Comoros",
+  "Congo",
+  "Costa Rica",
+  "Croatia",
+  "Cuba",
+  "Cyprus",
+  "Czech Republic",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "East Timor",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Ethiopia",
+  "Fiji",
+  "Finland",
+  "France",
+  "Gabon",
+  "Gambia",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Greece",
+  "Grenada",
+  "Guatemala",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Honduras",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Israel",
+  "Italy",
+  "Ivory Coast",
+  "Jamaica",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Kosovo",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Macedonia",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Mauritania",
+  "Mauritius",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "North Korea",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestinian Territories",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Poland",
+  "Portugal",
+  "Qatar",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Korea",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Swaziland",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "Togo",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States of America",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City",
+  "Venezuela",
+  "Vietnam",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe",
+];
+
+const newDiv2 = document.getElementsByTagName("div");
+console.log(newDiv2.length);
+console.log(countriesALL.length);
+newDiv2[2].textContent = countriesALL[2];
+for (let i = 1; i <= newDiv2.length; i++) {
+  document.write(i)
+  newDiv2[i].textContent = countriesALL[i] || "";
+}
+ divContainer.removeChild(newDiv);
