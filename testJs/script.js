@@ -909,7 +909,7 @@ let catNames = [];
 //   .catch((error) => {
 //     console.error("There was a problem with the fetch operation:", error);
 //   });
-console.clear()
+console.clear();
 
 //day19
 function outerFunction() {
@@ -948,18 +948,18 @@ const innerFuncs = outerFunction1();
 console.log(innerFuncs.plusOne);
 console.log(innerFuncs.minusOne);
 
-function off(){
-  let outerVar = "Tôi Test Thử..."
-  function off2(){
-    console.log(outerVar)
+function off() {
+  let outerVar = "Tôi Test Thử...";
+  function off2() {
+    console.log(outerVar);
   }
-  return outerVar
+  return outerVar;
 }
-console.log(off())
+console.log(off());
 
-function barChucNang(){
-  function cn1(){
-    console.log("Chức năng 1")
+function barChucNang() {
+  function cn1() {
+    console.log("Chức năng 1");
   }
   function cn2() {
     console.log("Chức năng 2");
@@ -973,8 +973,8 @@ function barChucNang(){
     function3: cn3,
   };
 }
-const inrachucnang = barChucNang()
-inrachucnang.function1()
+const inrachucnang = barChucNang();
+inrachucnang.function1();
 inrachucnang.function2();
 inrachucnang.function3();
 
@@ -1023,7 +1023,6 @@ myAccount.addIncome("Thưởng", 1000);
 myAccount.addExpense("Hóa đơn điện", 200);
 console.log(myAccount.accountInfo());
 console.log(`Số dư tài khoản: ${myAccount.accountBalance()}`);
-
 
 // console.log("Welcome to 30DaysOfJavaScript");
 // let firstName = "nguyen van ngu";
@@ -2049,3 +2048,30 @@ console.log(`Số dư tài khoản: ${myAccount.accountBalance()}`);
 // myAccount.addExpense("Hóa đơn điện", 200);
 // console.log(myAccount.accountInfo());
 // console.log(`Số dư tài khoản: ${myAccount.accountBalance()}`);
+
+//Day 20
+
+const allTitles = document.getElementsByTagName("h1");
+
+console.log(allTitles);
+console.log(allTitles.length);
+
+for (let i = 0; i < allTitles.length; i++) {
+  console.log(allTitles[i]);
+}
+
+let firstTitle = document.querySelector(".title");
+console.log(firstTitle);
+
+console.clear();
+const firstParagraph = document.querySelector("p");
+console.log(firstParagraph.textContent);
+
+const ids = ["d1", "d2", "d3", "d4"];
+for (const id of ids) {
+  const paragraph = document.querySelector(`#${id}`);
+  console.log(paragraph.textContent);
+}
+
+const paragraphs = document.querySelectorAll("p");
+console.log(paragraphs);
