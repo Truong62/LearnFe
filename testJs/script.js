@@ -2405,7 +2405,7 @@ const ketqua = document.getElementById("ketqua");
 
 
 
-okButton.addEventListener("click", () => {
+okButton.addEventListener("click",  () => {
   const inputNumber = nhapsocuoi.value;
   if (!isNaN(inputNumber)) {
     for (let i = 1; i <= inputNumber; i++) {
