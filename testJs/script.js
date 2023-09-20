@@ -2127,21 +2127,21 @@ function isPrime(number) {
   return true;
 }
 
-const divDay23 = document.getElementById("divContainer");
-for (let i = 1; i <= 100; i++) {
-  const newDiv = document.createElement("div");
-  newDiv.textContent = i;
-  if (i % 2 === 0) {
-    newDiv.style.backgroundColor = "green";
-  } else if (i / 2 > 0) {
-    newDiv.style.backgroundColor = "yellow";
-  }
-  if (isPrime(i)) {
-    newDiv.style.backgroundColor = "red";
-  }
+// const divDay23 = document.getElementById("divContainer");
+// for (let i = 1; i <= 100; i++) {
+//   const newDiv = document.createElement("div");
+//   newDiv.textContent = i;
+//   if (i % 2 === 0) {
+//     newDiv.style.backgroundColor = "green";
+//   } else if (i / 2 > 0) {
+//     newDiv.style.backgroundColor = "yellow";
+//   }
+//   if (isPrime(i)) {
+//     newDiv.style.backgroundColor = "red";
+//   }
 
-  divContainer.appendChild(newDiv);
-}
+//   divContainer.appendChild(newDiv);
+// }
 
 const countriesALL = [
   "Afghanistan",
@@ -2345,9 +2345,83 @@ const countriesALL = [
 const newDiv2 = document.getElementsByTagName("div");
 console.log(newDiv2.length);
 console.log(countriesALL.length);
-newDiv2[2].textContent = countriesALL[2];
+// newDiv2[2].textContent = countriesALL[2];
 for (let i = 1; i <= newDiv2.length; i++) {
-  document.write(i)
-  newDiv2[i].textContent = countriesALL[i] || "";
+  // newDiv2[i].textContent = countriesALL[i];
+  if (i == newDiv2.length) {
+    break;
+  }
 }
- divContainer.removeChild(newDiv);
+const random = Math.floor(Math.random() * countriesALL.length);
+console.log(countriesALL[random]);
+
+console.clear();
+
+// const button = document.querySelector("button");
+// button.addEventListener("dblclick", (e) => {
+//   console.log("e gives the event listener object:", e);
+//   console.log("e.target gives the selected element: ", e.target);
+//   console.log(
+//     "e.target.textContent gives content of selected element: ",
+//     e.target.textContent
+//   );
+// });
+
+// const mass = document.querySelector("#mass");
+// const height = document.querySelector("#height");
+// const button = document.querySelector("button");
+
+// let bmi;
+// button.addEventListener("click", () => {
+//   bmi = mass.value * height.value ;
+//   bmi2 = mass.value ** height.value;
+//   alert(`your bmi is ${bmi}`);
+//   console.log(bmi);
+//   console.log(bmi2);
+// });
+
+// const input = document.querySelector("input");
+// const p = document.querySelector("p");
+
+// input.addEventListener("input", (e) => {
+//   p.textContent = e.target.value;
+// });
+
+const input = document.querySelector("input");
+const p = document.querySelector("p");
+
+// input.addEventListener("blur", (e) => {
+//   p.textContent = "Field is required";
+//   p.style.color = "red";
+// });
+
+// document.body.addEventListener("keypress", (e) => {
+//   alert(e.keyCode);
+// });
+
+const okButton = document.getElementById("okButton");
+const nhapsocuoi = document.getElementById("nhapsocuoi");
+const ketqua = document.getElementById("ketqua");
+
+
+
+okButton.addEventListener("click", () => {
+  const inputNumber = nhapsocuoi.value;
+  if (!isNaN(inputNumber)) {
+    for (let i = 1; i <= inputNumber; i++) {
+      const newDiv = document.createElement("div");
+      newDiv.textContent = i;
+      if (i % 2 === 0) {
+        newDiv.style.backgroundColor = "green";
+      } else if (i / 2 > 0) {
+        newDiv.style.backgroundColor = "yellow";
+      }
+      if (isPrime(i)) {
+        newDiv.style.backgroundColor = "red";
+      }
+      ketqua.appendChild(newDiv);
+    }
+  } else {
+    ketqua.textContent = "Vui lòng nhập một số hợp lệ.";
+  }
+});
