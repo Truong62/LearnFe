@@ -12,7 +12,8 @@ th {
   text-align: left;
 }
 h3 {
-    margin: 0;
+  margin: 0;
+  padding: 15px;
   text-transform: capitalize;
 }
 .column1 {
@@ -22,6 +23,7 @@ h3 {
   width: 80%;
 }
 .title-size {
+  padding: 5px;
   margin: 0;
   padding-left: 30px;
 }
