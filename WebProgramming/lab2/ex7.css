@@ -5,6 +5,7 @@
 table,
 th {
   border-collapse: collapse;
+  
 }
 th {
   padding: 10px;
@@ -16,6 +17,9 @@ h3 {
 }
 .column1 {
   background-color: rgb(222, 222, 222);
+}
+.column2{
+  width: 80%;
 }
 .title-size {
   margin: 0;
