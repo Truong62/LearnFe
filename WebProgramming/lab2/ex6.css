@@ -1,11 +1,14 @@
-table,th,td {
+*{
+  font-family: Tahoma;
+}
+table,td {
   border: 1px solid black;
 }
 .content td{
     padding-bottom: 50px;
     color: black;
 }
-th,td {
+td {
   padding: 2px 50px 2px 2px;
 }
 .header,.footer {
