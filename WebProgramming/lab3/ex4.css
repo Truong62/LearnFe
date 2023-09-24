@@ -9,7 +9,6 @@
   background-color: rgb(231, 231, 231);
   height: 50px;
   position: relative;
-  
 }
 #header img {
   line-height: 50px;
@@ -27,13 +26,39 @@
   line-height: 50px;
   display: inline-block;
 }
-.nav li:hover{
+.nav li:hover {
   background-color: brown;
   color: aliceblue;
 }
 .nav li a {
   color: black;
 }
-#header img , .nav {
+#header img,
+.nav {
   padding: 0 20px;
+}
+.banner-title img {
+  position: relative;
+  height: 720px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.title-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 1;
+  text-shadow: 0.5px 0.5px 5px black;
+}
+.title-banner h3 {
+  font-size: 60px;
+  text-align: left;
+  color: white;
+}
+.title-banner p {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+
 }
