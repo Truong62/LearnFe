@@ -3,28 +3,37 @@
   padding: 0;
   list-style-type: none;
   font-family: arial;
+  text-decoration: none;
 }
-
 #header {
-  width: 100%;
-  background-color: rgb(233, 232, 232);
-  box-shadow: 1px 1px 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 25px ;
+  background-color: rgb(231, 231, 231);
+  height: 50px;
+  position: relative;
+  
+}
+#header img {
+  line-height: 50px;
+  position: absolute;
+  height: 50px;
 }
 
-.nav {
-    padding: 0 35px ;
+#header .nav {
   display: inline-block;
+  position: absolute;
+  right: 0;
 }
-
 .nav li {
+  padding: 0 20px;
+  line-height: 50px;
   display: inline-block;
-  padding: 10px;
-  font-size: 15px;
 }
-.banner-title img{
-width: 100%;
+.nav li:hover{
+  background-color: brown;
+  color: aliceblue;
+}
+.nav li a {
+  color: black;
+}
+#header img , .nav {
+  padding: 0 20px;
 }
