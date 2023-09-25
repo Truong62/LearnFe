@@ -48,16 +48,5 @@
   color: black;
   background-color: #f44336;
 }
-#header .seach-icon {
-  float: right;
-  padding: 0 21px;
-}
-#header .seach-icon:hover {
-  background-color: #f44336;
-  cursor: pointer;
-}
-#header .icon-seach {
-  color: #fff;
-  font-size: 20px;
-  line-height: 46px;
-}
+
+
