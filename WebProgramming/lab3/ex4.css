@@ -4,6 +4,7 @@
   list-style-type: none;
   font-family: arial;
   text-decoration: none;
+  
 }
 #header {
   background-color: rgb(231, 231, 231);
@@ -67,21 +68,21 @@
   padding: 25px 0px 130px 0px;
 }
 .list {
+  height: 1920px;
   display: flex;
   padding: 10px 25px;
-  
 }
 .list .icon {
   width: 33.33333%;
   font-size: 60px;
   text-align: center;
 }
-.list .icon h5{
+.list .icon h5 {
   padding: 15px;
   font-size: 35px;
   color: rgb(99, 221, 136);
 }
-.list .icon p{
+.list .icon p {
   font-size: 35px;
   padding: 0 35px;
   color: grey;
