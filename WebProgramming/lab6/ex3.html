@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="button" onclick="insert_Row()" value="Insert row">
-    <script src=""></script>
-</body>
+    <style>
+        table , th {
+            border: 1px solid silver;
+        }
+    </style>
+  </head>
+  <body>
+    <table id="sampleTable"></table>
+    <input id="inputNb" type="button" value="Insert row" />
+    <input id="Del" type="button" value="DeL row" />
+    <script src="ex3.js"></script>
+  </body>
 </html>
