@@ -3,7 +3,8 @@ label {
   width: 180px;
   text-align: left;
 }
-select,input[type="text"],
+select,
+input[type="text"],
 [type="email"] {
   display: inline-block;
   width: 200px;
@@ -31,13 +32,17 @@ input[type="reset"] {
   padding: 10px 15px;
   cursor: pointer;
 }
-.textarea-wrapper{
+.textarea-wrapper {
   display: inline;
   width: 200px;
 }
-.gender .gender-label{
+.gender .gender-label {
   display: inline;
   padding-right: 5px;
+}
+.textarea-wrapper > label {
+  display: inline-block;
+  vertical-align: top;
 }
 input[type="submit"] {
   display: inline-block;
