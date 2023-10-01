@@ -30,12 +30,12 @@ var Del = document.getElementById("Del");
 Del.onclick = function () {
   const inputNumber = prompt("Dòng muốn xóa: ");
   const rowIndex = parseInt(inputNumber); 
-  if (!isNaN(rowIndex) && rowIndex >= 0 && rowIndex < table.rows.length) {
-    table.deleteRow(rowIndex + 1);
+  if (!isNaN(rowIndex) && rowIndex >= 1 && rowIndex < (table.rows.length + 1)) {
+    table.deleteRow(rowIndex -1 );
   } else {
     alert(
-      "Vui lòng nhập một số nguyên hợp lệ trong khoảng từ 0 đến " +
-        (table.rows.length - 1)
+      "Vui lòng nhập một số nguyên hợp lệ trong khoảng từ 1 đến " +
+        (table.rows.length )
     );
   }
 };
