@@ -1,6 +1,14 @@
+function showError() {
+  const e = document.getElementById("fname").value;
+  if(e = null){
+    alert("ko de trong")
+    return false
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
-  const showInfor = document.getElementById(".showInfor");
+  
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -12,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const country = document.getElementById("country").value;
     const comment = document.getElementById("comment").value;
 
+    const showInfor = document.querySelector(".showInfor");
     showInfor.innerHTML = `
       <h2>Customer Form:</h2>
       <p><strong>Full Name:</strong> ${fullName}</p>
