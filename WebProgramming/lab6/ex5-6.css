@@ -24,6 +24,7 @@ h2 {
 .button {
   text-align: right;
 }
+
 input[type="reset"] {
   display: inline-block;
   background-color: #ff4800;

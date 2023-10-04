@@ -1,6 +1,6 @@
 const fnameInput = document.getElementById("fname");
 const errorMessage = document.getElementById("error-fullName");
-
+const styleEror = document.getElementsByTagName("input");
 const fullName = document.getElementById("fname");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
@@ -57,8 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       !countryValue ||
       commentValue == ""
     ) {
-      showInfor.innerHTML =
-        "<p style='color: red;'>error</p>";
+      showInfor.innerHTML = "<p style='color: red;'>error</p>";
     } else {
       showInfor.innerHTML = `
         <h2>Customer Form:</h2>
@@ -74,4 +73,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
