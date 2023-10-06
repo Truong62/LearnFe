@@ -21,13 +21,15 @@
 .login-form h4 {
   padding: 10px 0px;
 }
-.login-form p {
+.login-form> p {
+  
   padding-top: 5px;
 }
 #form-input-login {
   margin-bottom: 25px;
 }
-#form-input-login input {
+#form-input-login input[type="text"],
+input[type="submit"] {
   width: 400px;
   border: none;
   border-bottom: 1px solid grey;
@@ -40,6 +42,24 @@
   cursor: pointer;
   font-size: 20px;
   color: white;
+}
+.mk {
+  width: 400px;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  display: flex;
+}
+.mk p{
+  margin: auto 0;
+  color: rgb(11, 116, 229);
+  cursor: pointer;
+}
+.mk input[type="password"] {
+  width: 400px;
+  border: none;
+  outline: none;
+  padding: 16px;
 }
 .login-form {
   padding-right: 38px;
