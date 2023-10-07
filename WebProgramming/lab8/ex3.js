@@ -31,4 +31,3 @@ function bubbleSort(event) {
 
 const form = document.querySelector("form");
 form.addEventListener("submit", bubbleSort);
-//ex4
