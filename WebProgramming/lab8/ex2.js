@@ -4,13 +4,13 @@ setInterval(function () {
 function printPage() {
   window.print();
 }
-function openWin(){
-  window.open()
+function openWin() {
+  window.open();
 }
-function showSize(){
-  document.write( window.innerHeight)
-   
-document.write("           ")
+function showSize() {
+  document.write(window.innerHeight);
 
-  document.write( window.innerWidth)
+  document.write("           ");
+
+  document.write(window.innerWidth);
 }

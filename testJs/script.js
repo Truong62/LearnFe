@@ -4852,3 +4852,49 @@ okButton.addEventListener("click",  () => {
     ketqua.textContent = "Vui lòng nhập một số hợp lệ.";
   }
 });
+//   var stringNew = "hello";
+      //   console.log(stringNew.length);
+      //   console.log(stringNew.indexOf("p"));
+      //   console.log(stringNew.search("h"));
+      //   console.log(stringNew.substring("1"));
+      //   console.log(Math.round(4.9));
+      //   console.log(Math.floor(Math.random() * 10));
+
+      //   var x = new Date();
+      //   document.getElementById("demo").innerHTML = x.toUTCString();
+      //   document.getElementById("demo").innerHTML = x;
+      //   document.getElementById("demo").innerHTML = x.toString();
+
+      //   var car = function (id, name, year) {
+      //     this.id = id;
+      //     this.name = name;
+      //     this.year = year;
+      //   };
+      //   car.prototype.newName = function (Name) {
+      //     this.name = Name;
+      //   };
+      //   car = new car(1, "KIA", 2023);
+      //   console.log(car);
+      //   console.log("id car: ", car.id);
+      //   console.log("name car: ", car.name);
+      //   console.log("year car: ", car.year);
+
+      //   car.newName("Kia Moning");
+      //   console.log(car);
+      //   console.log("id car: ", car.id);
+      //   console.log("name car: ", car.name);
+      //   console.log("year car: ", car.year);
+
+      class Rectangle {
+        constructor(height, width) {
+          this.height = height;
+          this.width = width;
+        }
+        acreage(s) {
+          this.s = s;
+        }
+      }
+      var hv = new Rectangle(50, 25);
+      console.log(hv);
+      hv.acreage("acreage =");
+      console.log(hv.s, (hv.height * hv.width) / 2);
