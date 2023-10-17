@@ -120,6 +120,7 @@
 #content .tab-product {
   display: flex;
   justify-content: center;
+   z-index: 10;
 }
 
 #content .namelogoVANS,#content .namelogoJORDAN,#content .namelogoNIKE{
@@ -135,6 +136,7 @@
   text-align: center;
   margin: 0 10px;
   flex-wrap: wrap;
+  
 }
 #content .item-product {
   width: calc(25% - 10px);
