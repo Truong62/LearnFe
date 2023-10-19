@@ -27,51 +27,6 @@ const unfinishedItems = document.querySelectorAll(".unfinished");
 for (const item of unfinishedItems) {
   item.style.backgroundColor = "red";
 }
-
-// function isPrime(number) {
-//   if (number <= 1) {
-//     return false;
-//   }
-//   if (number <= 3) {
-//     return true;
-//   }
-//   if (number % 2 === 0) {
-//     return false;
-//   }
-//   for (let i = 3; i <= Math.sqrt(number); i += 2) {
-//     if (number % i === 0) {
-//       return false;
-//     }
-//   }
-//   return true;
-// }
-// function isEven(number) {
-//   return number % 2 === 0;
-// }
-
-// function isOdd(number) {
-//   return number % 2 !== 0;
-// }
-
-// function crTable() {
-//   const number = parseInt(document.getElementById("number").value);
-
-//   for (let i = 0; i <= number; i++) {
-//     let table = document.createElement("h1");
-//     table.style.fontSize = "24px";
-//     if (isPrime(i)) {
-//       table.textContent = `${i} (Số nguyên tố)`;
-//     } else if (isEven(i)) {
-//       table.textContent = `${i} (Số chẵn)`;
-//     } else if (isOdd(i)) {
-//       table.textContent = `${i} (Số lẻ)`;
-//     }
-//   }
-// }
-// const form = document.querySelector("form");
-// form.addEventListener("submit", crTable);
-
-
 function isPrime(number) {
   if (number <= 1) {
     return false;
@@ -126,3 +81,35 @@ function crTable(e) {
 
 const form = document.querySelector("form");
 form.addEventListener("submit", crTable);
+
+
+
+const button = document.querySelector("button");
+button.addEventListener("click", (e) => {
+  console.log("e gives the event listener object:", e);
+  console.log("e.target gives the selected element: ", e.target);
+  console.log(
+    "e.target.textContent gives content of selected element: ",
+    e.target.textContent
+  );
+});
+
+
+const mass = document.querySelector("#mass");
+const height = document.querySelector("#height");
+const button2 = document.querySelector("button");
+
+let bmi;
+
+button2.addEventListener("click", () => {
+  const massValue = parseFloat(mass.value); 
+  const heightValue = parseFloat(height.value); 
+
+  if (isNaN(massValue) || isNaN(heightValue)) {
+    alert("Please enter valid values for mass and height.");
+  } else {
+    bmi = massValue / (heightValue * heightValue);
+    alert(`Your BMI is ${bmi}`);
+    console.log(bmi);
+  }
+});
