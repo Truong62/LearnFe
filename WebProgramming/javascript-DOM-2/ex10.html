@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #population-chart,
+      #language-chart {
+        display: inline-block;
+        width: 45%;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
     <div id="InputKey">Input Key</div>
     <div id="output"></div>
+
+    <h1>Ten Most Populated Countries</h1>
+    <div id="population-chart"></div>
+
+    <h1>Ten Most Spoken Languages</h1>
+    <div id="language-chart"></div>
     <script src="ex10.js"></script>
-</body>
+  </body>
 </html>
