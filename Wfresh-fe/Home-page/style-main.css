@@ -330,18 +330,30 @@ ul.list-item-header ul.list-item-header {
   width: 1px;
   background: #e6e6e6;
   content: "";
-  right: -10px;
+  z-index: 1000;
+  right: 1px;
 }
 .item-product-main-hot > a > img {
-  height: 227px;
+  height: 200px;
+  margin: auto;
 }
 .item-product-main-hot:hover img {
   transform: scale(1.08);
   transition: all 1s ease;
 }
+.infor-product-hot img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto !important;
+}
 .infor-product-hot {
   margin-top: 10px;
   text-align: center;
+  background-color: white;
+  overflow: hidden;
+  z-index: 100;
+  position: relative;
+  padding: 0 10px 14px;
 }
 .wrapper-product-hot {
   position: relative;
@@ -765,7 +777,7 @@ ul.list-item-header ul.list-item-header {
   color: #ffb416;
   transition: all 0.3s ease-out;
 }
-/* .swiper-button-next,
+.swiper-button-next,
 .swiper-button-prev {
   width: 30px;
   height: 60px;
@@ -780,18 +792,26 @@ ul.list-item-header ul.list-item-header {
   outline: none;
   opacity: 0.9;
 }
-.swiper-button-prev {
-  padding-right: 7px;
-  border-radius: 0 100px 100px 0;
-  left: 0;
-}
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  content: "";
   font-size: 20px;
   color: #333;
   transition: all 0.5s;
-} */
+}
+.swiper-button-next {
+  color: #333;
+  transition: all 0.5s;
+  padding-left: 7px;
+  border-radius: 100px 0 0 100px;
+  right: -1px !important;
+}
+.swiper-button-prev {
+  color: #333;
+  transition: all 0.5s;
+  padding-right: 7px;
+  border-radius: 0 100px 100px 0;
+  left: -1px !important;
+}
 .product__price .price {
   transition: all 0.15s;
   font-size: 15px;
@@ -836,6 +856,16 @@ ul.list-item-header ul.list-item-header {
   background: #3ba66b;
   margin: 0 2px;
 }
+.swiper-button-next,
+.swiper-button-prev {
+  height: 60px !important;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  color: #333;
+  transition: all 0.5s;
+}
 .product-action i:hover {
   background-color: #ffb416 !important;
   transition: all 0.3s ease-out;
@@ -855,10 +885,14 @@ ul.list-item-header ul.list-item-header {
   transition: all ease 0.3s;
   margin-bottom: 0;
 }
+.item-product-main-hot:hover .product-action,
 .card-item:hover .product-action {
   margin-bottom: 80px;
 }
 .item_blog_base img:hover {
   transform: scale(1.08);
   transition: all 1s ease;
+}
+.mySwiper {
+  position: relative;
 }

@@ -86,8 +86,8 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-var swiper = new Swiper(".mySwiperCard", {
-  slidesPerView: 6,
+var swiper = new Swiper(".mySwiperitemProduct", {
+  slidesPerView: 5,
   spaceBetween: 20,
   pagination: {
     el: ".swiper-pagination",
@@ -96,5 +96,12 @@ var swiper = new Swiper(".mySwiperCard", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+});
+var swiper = new Swiper(".mySwiperImg", {
+  slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
   },
 });
