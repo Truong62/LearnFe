@@ -105,3 +105,10 @@ var swiper = new Swiper(".mySwiperImg", {
     type: "fraction",
   },
 });
+
+const filter = document.getElementById("filterRight");
+
+filter.onclick = () => {
+  const headerleft = document.getElementById("headerLeft");
+  headerleft.style.display = "block";
+};

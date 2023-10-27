@@ -16,45 +16,79 @@
     />
     <link rel="stylesheet" href="style-main.css" />
     <link rel="stylesheet" href="swiper.css" />
+    <link
+      rel="stylesheet"
+      href="responsive-mobile.css"
+      media="screen and (max-width: 768px)"
+    />
   </head>
   <body>
     <div class="header">
       <div class="middle-header">
         <div class="container">
           <div class="row align-items-center">
-            <div class="header-left col-xl-5">
-              <li><a href="#">Trang chủ</a></li>
-              <li><a href="#">Giới Thiệu</a></li>
-              <li>
-                <a href="#">Sản Phẩm <i class="bi bi-caret-down-fill"></i></a>
-                <ul class="list-item-header">
-                  <li><a href="#">Hạt giống</a></li>
-                  <li><a href="#">Hải sản tươi</a></li>
-                  <li><a href="#">Rau củ quả</a></li>
-                  <li><a href="#">Sản phẩm bán chạy</a></li>
-                  <li><a href="#">Thịt tươi sống</a></li>
-                  <li><a href="#">Thực phẩm tết</a></li>
-                  <li><a href="#">Thực phẩm khô</a></li>
-                  <li>
-                    <a href="#">Trái cây</a>
-                    <i class="bi bi-caret-right-fill" style="float: right"></i>
-                    <ul class="list-item-header">
-                      <li><a href="#">Táo</a></li>
-                      <li><a href="#">Chuối</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Trứng và bơ</a></li>
-                  <li><a href="#">Đồ ăn đóng hộp</a></li>
-                  <li><a href="#">Đồ uống</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Tin Tức</a></li>
-              <li><a href="#">Liên Hệ</a></li>
+            <div class="col-xl-5 col-md-12 header-left" id="headerLeft">
+              <div class="wrap-left">
+                <div class="accountMoblie d-xl-none d-block">
+                  <a href="/account/login" style="border-right: 1px solid #fff"
+                    >Đăng nhập</a
+                  >
+                  <a href="/account/register">Đăng ký</a>
+                  <div class="close-menu">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fal"
+                      data-icon="times-circle"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      class="svg-inline--fa fa-times-circle fa-w-16"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 464c-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216 0 118.7-96.1 216-216 216zm94.8-285.3L281.5 256l69.3 69.3c4.7 4.7 4.7 12.3 0 17l-8.5 8.5c-4.7 4.7-12.3 4.7-17 0L256 281.5l-69.3 69.3c-4.7 4.7-12.3 4.7-17 0l-8.5-8.5c-4.7-4.7-4.7-12.3 0-17l69.3-69.3-69.3-69.3c-4.7-4.7-4.7-12.3 0-17l8.5-8.5c4.7-4.7 12.3-4.7 17 0l69.3 69.3 69.3-69.3c4.7-4.7 12.3-4.7 17 0l8.5 8.5c4.6 4.7 4.6 12.3 0 17z"
+                        class=""
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li>
+                  <a href="#">Sản Phẩm <i class="bi bi-caret-down-fill"></i></a>
+                  <ul class="list-item-header">
+                    <li><a href="#">Hạt giống</a></li>
+                    <li><a href="#">Hải sản tươi</a></li>
+                    <li><a href="#">Rau củ quả</a></li>
+                    <li><a href="#">Sản phẩm bán chạy</a></li>
+                    <li><a href="#">Thịt tươi sống</a></li>
+                    <li><a href="#">Thực phẩm tết</a></li>
+                    <li><a href="#">Thực phẩm khô</a></li>
+                    <li>
+                      <a href="#">Trái cây</a>
+                      <i
+                        class="bi bi-caret-right-fill"
+                        style="float: right"
+                      ></i>
+                      <ul class="list-item-header">
+                        <li><a href="#">Táo</a></li>
+                        <li><a href="#">Chuối</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Trứng và bơ</a></li>
+                    <li><a href="#">Đồ ăn đóng hộp</a></li>
+                    <li><a href="#">Đồ uống</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Tin Tức</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+              </div>
             </div>
-            <div class="col-xl-2">
+            <div class="col-xl-2 col-md-3 header-img">
               <a href="#"><img src="../image/logo.png" alt="logo" /></a>
             </div>
-            <div class="col-xl-5 header-right">
+            <div class="col-xl-5 col-md-9 header-right">
               <div class="search-header">
                 <input type="search" placeholder="Tìm kiếm" />
                 <button><i class="bi bi-search"></i></button>
@@ -67,6 +101,7 @@
                 <a href="#"
                   ><i class="bi bi-bag"></i><span class="countList">0</span></a
                 >
+                <i class="bi bi-filter-right" id="filterRight"></i>
                 <div class="login-header">
                   <a href="https://sfresh.w2.exdomain.net/account/login"
                     ><i class="bi bi-person-circle"></i>

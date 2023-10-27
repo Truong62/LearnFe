@@ -1,0 +1,68 @@
+body {
+  font-size: 14px;
+}
+.header .middle-header {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.header .header-img img {
+  max-width: 130px;
+  margin-bottom: 5px;
+}
+.row > .header-right .link-header {
+  position: absolute;
+  top: 10px;
+  right: 7px;
+}
+.row > .header-right .search-header button {
+  position: absolute;
+}
+.header .header-left {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  top: 0;
+}
+.row > .header-right .search-header {
+  width: 99%;
+}
+.login-header {
+  display: none;
+}
+.bi-filter-right {
+  display: block;
+}
+.accountMoblie {
+  position: relative;
+  display: flex !important;
+  flex: 1;
+  background: #3ba66b;
+}
+.accountMoblie svg {
+  width: 15px;
+  height: 15px;
+  color: #fff;
+}
+.accountMoblie a {
+  text-decoration: none;
+  margin-bottom: 0;
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  color: #fff !important;
+  padding: 20px 5px;
+}
+.wrap-left {
+  right: 0;
+  display: block !important;
+  max-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  background: #fff;
+  width: 100%;
+  padding-bottom: 50px;
+}
+.wrap-left li a {
+  color: black !important;
+}

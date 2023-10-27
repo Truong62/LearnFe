@@ -16,12 +16,12 @@
   margin-right: -10px;
   margin-left: -10px;
 }
-.row > .header-left {
+.row > .header-left .wrap-left {
   text-align: left;
   display: flex;
   list-style: none;
 }
-.row > .header-left > li > a {
+.row > .header-left .wrap-left > li > a {
   font-weight: 400;
   height: 42px;
   line-height: 42px;
@@ -30,7 +30,7 @@
   color: #fff;
   font-size: 15px;
 }
-.header-left > li:hover > a {
+.header-left .wrap-left > li:hover > a {
   color: #ffb416;
   transition: all 0.2s ease;
 }
@@ -39,7 +39,7 @@
   color: #ffb416;
   transition: all 0.3s ease;
 }
-.header-left li:hover > .list-item-header {
+.header-left .wrap-left li:hover > .list-item-header {
   display: block;
 }
 .list-item-header {
@@ -81,6 +81,7 @@ ul.list-item-header ul.list-item-header {
   justify-content: flex-end;
 }
 .row > .header-right .search-header {
+  position: relative;
   margin-bottom: 0;
   height: 46px;
   line-height: 46px;
@@ -100,13 +101,16 @@ ul.list-item-header ul.list-item-header {
   transition: all 0.3s ease;
 }
 .row > .header-right .search-header button {
-  border: none;
-  display: inline;
+  position: absolute;
+  right: 0;
   color: #fff;
+  padding: 0;
   height: 46px;
   width: 46px;
+  top: 0;
   border-radius: 50%;
   background-color: #ffb416;
+  border: none;
 }
 .link-header {
   display: flex;
@@ -895,4 +899,10 @@ ul.list-item-header ul.list-item-header {
 }
 .mySwiper {
   position: relative;
+}
+.bi-filter-right {
+  display: none;
+  color: #fff;
+  font-size: 25px;
+  padding: 0 0 0 25px;
 }
