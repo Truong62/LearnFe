@@ -5,7 +5,7 @@
   "main": "sever.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node sever.js"
+    "start": "node ./src/sever.js"
   },
   "keywords": [
     "truong68"
@@ -13,6 +13,7 @@
   "author": "truong83",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "4.18.2"
   }
 }
