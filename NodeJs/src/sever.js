@@ -7,6 +7,9 @@ const port = process.env.PORT || 8888;
 const webRoutes = require("./routes/web");
 const configViewEngine = require("./config/viewEngine");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 configViewEngine(app);
 
 app.use("/", webRoutes);
