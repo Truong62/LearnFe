@@ -18,12 +18,47 @@ const getNavbar = (req, res) => {
 };
 
 const getSubmitUser = (req, res) => {
-  console.log(req.body);
-  res.send("Hello User");
+  let email = req.body.email;
+  let name = req.body.name;
+  let city = req.body.city;
+
+  // let { email, name, city } = req.body;
+
+  // console.log(req.body.email, "\bn", req.body.name, "\bn", req.body.city);
+
+  configDB.query(
+    "INSERT INTO User (email, name, city) VALUES (?, ?, ?)",
+    [email, name, city],
+    function (err, results) {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error creating user");
+      } else {
+        console.log(results);
+        res.send("User created successfully");
+      }
+    }
+  );
+};
+const getCreate = (req, res) => {
+  res.render("creare.ejs");
+};
+const getDataBd = (req, res) => {
+  configDB.query("select * FROM `User`"),
+    function (err, results) {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error retrieving data from the database");
+      } else {
+        res.json(results);
+      }
+    };
 };
 module.exports = {
   getHomepage,
   getMain,
   getNavbar,
   getSubmitUser,
+  getCreate,
+  getDataBd,
 };

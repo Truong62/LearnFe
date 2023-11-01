@@ -38,3 +38,28 @@ label {
 .save {
   padding: 10px;
 }
+table {
+  border-collapse: collapse;
+}
+table,
+td {
+  border: 1px solid rgb(207, 205, 205);
+}
+table td {
+  padding: 5px 15px 5px 5px;
+  font-family: arial;
+}
+table tr:not(.header):hover {
+  background-color: rgb(233, 142, 142);
+  color: #000000;
+}
+.company-list {
+  padding-right: 35px;
+}
+.header {
+  background-color: rgb(0, 255, 170);
+  color: aliceblue;
+}
+.row-1 {
+  background-color: rgb(235, 235, 235);
+}

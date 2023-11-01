@@ -107,8 +107,13 @@ var swiper = new Swiper(".mySwiperImg", {
 });
 
 const filter = document.getElementById("filterRight");
+const close = document.getElementById("close-menu");
 
 filter.onclick = () => {
   const headerleft = document.getElementById("headerLeft");
   headerleft.style.display = "block";
+};
+close.onclick = () => {
+  const headerleft = document.getElementById("headerLeft");
+  headerleft.style.display = "none";
 };
