@@ -5,6 +5,8 @@ const {
   getNavbar,
   getSubmitUser,
   getCreate,
+  getUpdate,
+  getUpdateUser,
 } = require("../controllers/homeControlleer");
 const router = express.Router();
 
@@ -13,5 +15,7 @@ router.get("/abc", getHomepage);
 router.get("/navbar", getNavbar);
 router.post("/submit-user", getSubmitUser);
 router.get("/create", getCreate);
+router.get("/update/:id", getUpdate);
+router.post("/update-user", getUpdateUser);
 
 module.exports = router;

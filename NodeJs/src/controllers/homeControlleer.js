@@ -1,5 +1,5 @@
 const configDB = require("../config/database");
-const { getAllUser } = require("../services/crdu");
+const { getAllUser, getUserById, updateUserById } = require("../services/crdu");
 let use = [];
 const getHomepage = async (req, res) => {
   let results = await getAllUser();
@@ -27,13 +27,32 @@ const getSubmitUser = async (req, res) => {
   res.send("Created user succeed !");
 };
 const getCreate = (req, res) => {
-  res.render("creare.ejs");
+  res.render("update.ejs");
 };
 
+const getUpdate = async (req, res) => {
+  const userId = req.params.id;
+
+  let user = await getUserById(userId);
+
+  res.render("edit.ejs", { UserObj: user });
+};
+
+const getUpdateUser = async (req, res) => {
+  let id = req.body.id;
+  let email = req.body.email;
+  let name = req.body.name;
+  let city = req.body.city;
+  await updateUserById(email, name, city, id);
+  // res.send("Updated user succeed !");
+  res.redirect("/abc");
+};
 module.exports = {
   getHomepage,
   getMain,
   getNavbar,
   getSubmitUser,
   getCreate,
+  getUpdate,
+  getUpdateUser,
 };
