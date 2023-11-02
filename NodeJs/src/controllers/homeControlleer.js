@@ -1,12 +1,10 @@
 const configDB = require("../config/database");
-
+const { getAllUser } = require("../services/crdu");
 let use = [];
-const getHomepage = (req, res) => {
-  configDB.query("select * FROM `User` ", function (err, results, fields) {
-    use = results;
-    console.log("results: ", results);
-    res.send(JSON.stringify(use));
-  });
+const getHomepage = async (req, res) => {
+  let results = await getAllUser();
+  console.log(results);
+  return res.render("home.ejs", { users: results });
 };
 
 const getMain = (req, res) => {
@@ -17,48 +15,25 @@ const getNavbar = (req, res) => {
   res.render("home.ejs");
 };
 
-const getSubmitUser = (req, res) => {
+const getSubmitUser = async (req, res) => {
   let email = req.body.email;
   let name = req.body.name;
   let city = req.body.city;
 
-  // let { email, name, city } = req.body;
-
-  // console.log(req.body.email, "\bn", req.body.name, "\bn", req.body.city);
-
-  configDB.query(
+  let [results, fields] = await configDB.query(
     "INSERT INTO User (email, name, city) VALUES (?, ?, ?)",
-    [email, name, city],
-    function (err, results) {
-      if (err) {
-        console.error(err);
-        res.status(500).send("Error creating user");
-      } else {
-        console.log(results);
-        res.send("User created successfully");
-      }
-    }
+    [email, name, city]
   );
+  res.send("Created user succeed !");
 };
 const getCreate = (req, res) => {
   res.render("creare.ejs");
 };
-const getDataBd = (req, res) => {
-  configDB.query("select * FROM `User`"),
-    function (err, results) {
-      if (err) {
-        console.error(err);
-        res.status(500).send("Error retrieving data from the database");
-      } else {
-        res.json(results);
-      }
-    };
-};
+
 module.exports = {
   getHomepage,
   getMain,
   getNavbar,
   getSubmitUser,
   getCreate,
-  getDataBd,
 };

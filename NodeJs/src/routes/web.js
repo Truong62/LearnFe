@@ -5,7 +5,6 @@ const {
   getNavbar,
   getSubmitUser,
   getCreate,
-  getDataBd,
 } = require("../controllers/homeControlleer");
 const router = express.Router();
 
