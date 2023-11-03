@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/tytle.css" />
+    <link rel="stylesheet" href="/js/delete.js" />
   </head>
   <body>
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
+      <a class="active" href="/abc">Home</a>
       <a href="/create">Create User</a>
     </div>
 
@@ -47,9 +48,9 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.city %></td>
-        <td>
+        <td class="action">
           <a href="/update/<%= user.id %>">edit</a>
-          <button>delete</button>
+          <a href="/delete/<%= user.id %>">delete</a>
         </td>
       </tr>
       <% }); %>

@@ -19,4 +19,10 @@ const updateUserById = async (email, name, city, id) => {
     [email, name, city, id]
   );
 };
-module.exports = { getAllUser, getUserById, updateUserById };
+const DeleteUserById = async (id) => {
+  let [results, fields] = await configDB.query(
+    "DELETE FROM User WHERE id = ?;",
+    [id]
+  );
+};
+module.exports = { getAllUser, getUserById, updateUserById, DeleteUserById };

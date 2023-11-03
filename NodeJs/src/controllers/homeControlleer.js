@@ -1,9 +1,13 @@
 const configDB = require("../config/database");
-const { getAllUser, getUserById, updateUserById } = require("../services/crdu");
+const {
+  getAllUser,
+  getUserById,
+  updateUserById,
+  DeleteUserById,
+} = require("../services/crdu");
 let use = [];
 const getHomepage = async (req, res) => {
   let results = await getAllUser();
-  console.log(results);
   return res.render("home.ejs", { users: results });
 };
 
@@ -20,14 +24,23 @@ const getSubmitUser = async (req, res) => {
   let name = req.body.name;
   let city = req.body.city;
 
-  let [results, fields] = await configDB.query(
-    "INSERT INTO User (email, name, city) VALUES (?, ?, ?)",
-    [email, name, city]
-  );
-  res.send("Created user succeed !");
+  try {
+    let [results, fields] = await configDB.query(
+      "INSERT INTO User (email, name, city) VALUES (?, ?, ?)",
+      [email, name, city]
+    );
+
+    res.send(
+      "Created user succeed !<script>setTimeout(function(){window.location.href = '/abc';}, 2000);</script>"
+    );
+  } catch (error) {
+    console.error("Error creating user: ", error);
+    res.status(500).send("Error creating user");
+  }
 };
+
 const getCreate = (req, res) => {
-  res.render("update.ejs");
+  res.render("creare.ejs");
 };
 
 const getUpdate = async (req, res) => {
@@ -47,6 +60,13 @@ const getUpdateUser = async (req, res) => {
   // res.send("Updated user succeed !");
   res.redirect("/abc");
 };
+const getDelete = async (req, res) => {
+  let userId = req.params.id;
+
+  await DeleteUserById(userId);
+  res.redirect("/abc");
+};
+
 module.exports = {
   getHomepage,
   getMain,
@@ -55,4 +75,5 @@ module.exports = {
   getCreate,
   getUpdate,
   getUpdateUser,
+  getDelete,
 };

@@ -40,6 +40,7 @@ label {
 }
 table {
   border-collapse: collapse;
+  width: 100%;
 }
 table,
 td {
@@ -54,7 +55,7 @@ table tr:not(.header):hover {
   color: #000000;
 }
 .company-list {
-  padding-right: 35px;
+  width: 100px;
 }
 .header {
   background-color: rgb(0, 255, 170);
@@ -62,4 +63,7 @@ table tr:not(.header):hover {
 }
 .row-1 {
   background-color: rgb(235, 235, 235);
+}
+.action {
+  width: 100px;
 }
