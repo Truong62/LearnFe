@@ -74,7 +74,7 @@ submitGmail.onclick = (e) => {
 //   },
 // });
 
-var swiper = new Swiper(".mySwiper", {
+var swiper1 = new Swiper(".mySwiper", {
   slidesPerView: 4,
   spaceBetween: 20,
   pagination: {
@@ -86,7 +86,8 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-var swiper = new Swiper(".mySwiperitemProduct", {
+
+var swiper2 = new Swiper(".mySwiperitemProduct", {
   slidesPerView: 5,
   spaceBetween: 20,
   pagination: {
@@ -98,7 +99,13 @@ var swiper = new Swiper(".mySwiperitemProduct", {
     prevEl: ".swiper-button-prev",
   },
 });
-var swiper = new Swiper(".mySwiperImg", {
+if (window.innerWidth <= 992) {
+  swiper2.params.slidesPerView = 2;
+  swiper2.params.spaceBetween = 10;
+  swiper2.update();
+}
+
+var swiper3 = new Swiper(".mySwiperImg", {
   slidesPerView: 1,
   pagination: {
     el: ".swiper-pagination",
@@ -107,13 +114,15 @@ var swiper = new Swiper(".mySwiperImg", {
 });
 
 const filter = document.getElementById("filterRight");
-const close = document.getElementById("close-menu");
 
 filter.onclick = () => {
-  const headerleft = document.getElementById("headerLeft");
-  headerleft.style.display = "block";
+  var element = document.getElementById("headerLeft");
+  element.style.visibility = "visible";
+  element.classList.add("show");
 };
+const close = document.getElementById("close-menu");
 close.onclick = () => {
   const headerleft = document.getElementById("headerLeft");
-  headerleft.style.display = "none";
+  headerleft.style.visibility = "hidden";
+  headerleft.classList.remove("show");
 };
