@@ -57,3 +57,19 @@ enum Size {
   xl = "xl",
 }
 let size = Size.s;
+
+//Gemeric
+
+type User = {
+  name: string;
+  age: number;
+};
+
+const identity = <Type>(value: Type) => value;
+
+const result = identity<User>({
+  name: "pipi",
+  age: 19,
+});
+
+const myIdentity: <Type>(value: Type) => Type = identity;
