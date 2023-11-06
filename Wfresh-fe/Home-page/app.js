@@ -99,19 +99,14 @@ var swiper2 = new Swiper(".mySwiperitemProduct", {
     prevEl: ".swiper-button-prev",
   },
 });
-if (window.innerWidth <= 992) {
-  swiper2.params.slidesPerView = 2;
-  swiper2.params.spaceBetween = 10;
-  swiper2.update();
-}
 
-var swiper3 = new Swiper(".mySwiperImg", {
-  slidesPerView: 1,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-  },
-});
+// var swiper3 = new Swiper(".mySwiperImg", {
+//   slidesPerView: 1,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     type: "fraction",
+//   },
+// });
 
 const filter = document.getElementById("filterRight");
 
