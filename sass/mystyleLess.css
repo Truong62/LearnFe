@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+}
+h1 {
+  color: #3498db;
+}
+p {
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  padding: 10px;
+}
+.ahah {
+  width: 100px;
+  display: block;
+}
