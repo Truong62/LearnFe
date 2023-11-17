@@ -14,6 +14,18 @@ configViewEngine(app);
 
 app.use("/", webRoutes);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+const configDB = require("./config/database");
+
+// const silence = new Kitten({ name: "NNT" });
+// silence.save();
+
+(async () => {
+  try {
+    await configDB();
+    app.listen(port, () => {
+      console.log(`Be app listening on port ${port}`);
+    });
+  } catch (e) {
+    console.loh("error", e);
+  }
+})();

@@ -6,8 +6,9 @@ const {
   DeleteUserById,
 } = require("../services/crdu");
 let use = [];
+const User = require("../models/user");
 const getHomepage = async (req, res) => {
-  let results = await getAllUser();
+  let results = await User.find({});
   return res.render("home.ejs", { users: results });
 };
 
@@ -24,12 +25,13 @@ const getSubmitUser = async (req, res) => {
   let name = req.body.name;
   let city = req.body.city;
 
+  console.log(email, "    ", name, "    ", city);
   try {
-    let [results, fields] = await configDB.query(
-      "INSERT INTO User (email, name, city) VALUES (?, ?, ?)",
-      [email, name, city]
-    );
-
+    await User.create({
+      email: email,
+      name: name,
+      city: city,
+    });
     res.send(
       "Created user succeed !<script>setTimeout(function(){window.location.href = '/abc';}, 2000);</script>"
     );
@@ -46,7 +48,8 @@ const getCreate = (req, res) => {
 const getUpdate = async (req, res) => {
   const userId = req.params.id;
 
-  let user = await getUserById(userId);
+  let user = await User.findById(userId).exec();
+  // getUserById(userId);
 
   res.render("edit.ejs", { UserObj: user });
 };
@@ -56,14 +59,18 @@ const getUpdateUser = async (req, res) => {
   let email = req.body.email;
   let name = req.body.name;
   let city = req.body.city;
-  await updateUserById(email, name, city, id);
+  // await updateUserById(email, name, city, id);
   // res.send("Updated user succeed !");
+  await User.updateOne({ _id: id }, { name: name, email: email, city: city });
+
   res.redirect("/abc");
 };
 const getDelete = async (req, res) => {
   let userId = req.params.id;
 
-  await DeleteUserById(userId);
+  // await DeleteUserById(userId);
+
+  await User.deleteOne({ _id: userId });
   res.redirect("/abc");
 };
 

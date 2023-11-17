@@ -1,4 +1,7 @@
-const configDB = require("../config/database");
+// const configDB = require("../config/database");
+
+// configDB();
+
 const getAllUser = async () => {
   let [results, fields] = await configDB.query("select * FROM `User`");
   return results;
