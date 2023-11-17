@@ -5,6 +5,8 @@ const app = express();
 const port = process.env.PORT || 8888;
 // const hosstname = process.env.HOST_NAME;
 const webRoutes = require("./routes/web");
+//API
+const apiRoutes = require("./routes/api");
 const configViewEngine = require("./config/viewEngine");
 
 app.use(express.json());
@@ -13,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 configViewEngine(app);
 
 app.use("/", webRoutes);
+app.use("/v1/api", apiRoutes);
 
 const configDB = require("./config/database");
 

@@ -69,7 +69,6 @@ const getDelete = async (req, res) => {
   let userId = req.params.id;
 
   // await DeleteUserById(userId);
-
   await User.deleteOne({ _id: userId });
   res.redirect("/abc");
 };
