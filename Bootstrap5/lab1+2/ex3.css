@@ -18,3 +18,31 @@
   text-decoration: none;
   color: white;
 }
+.white-text {
+  color: white;
+}
+@media only screen and (max-width: 768px) {
+  .buuttom > ul {
+    display: none;
+  }
+  iframe {
+    width: 380px;
+    height: 200px;
+  }
+  p {
+    font-size: 13px;
+    font-weight: 450;
+  }
+  .logo img {
+    max-width: 150px;
+    height: 25px !important;
+  }
+  .buuttom > i {
+    display: flex !important;
+    justify-content: flex-end;
+    margin-right: 15px;
+  }
+  .buuttom {
+    padding: 0 !important;
+  }
+}
