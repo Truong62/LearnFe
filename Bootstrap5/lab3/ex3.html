@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Registration Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .error {
+        color: red;
+      }
+      .valid {
+        color: green;
+      }
+      .invalid {
+        color: red;
+      }
+      .valid-input {
+        border-color: green;
+      }
+      .invalid-input {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="registrationForm">
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+        <span class="validation-status"></span>
+        <br /><br />
+      </div>
+      <div>
+        <label for="username">User name:</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div>
+        <label for="repeatPassword">Repeat password:</label>
+        <input
+          type="password"
+          id="repeatPassword"
+          name="repeatPassword"
+          required
+        />
+      </div>
+      <div>
+        <label for="birthDate">Birth date:</label>
+        <input type="date" id="birthDate" name="birthDate" />
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" />
+      </div>
+      <div>
+        <label for="profileImage">Profile image:</label>
+        <input type="file" id="profileImage" name="profileImage" />
+      </div>
+      <div>
+        <label for="presentation">User presentation:</label>
+        <textarea id="presentation" name="presentation"></textarea>
+      </div>
+      <div>
+        <input type="checkbox" id="agreeTerms" name="agreeTerms" required />
+        <label for="agreeTerms">I agree to the terms of service</label>
+      </div>
+      <div>
+        <input type="button" id="validateBtn" value="Validate" />
+        <input type="button" id="resetBtn" value="Reset" />
+      </div>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $("#validateBtn").on("click", function () {
+          let isValid = true;
+          const email = $("#email").val();
+          if (email === "") {
+            isValid = false;
+            $("#email").addClass("invalid-input");
+            $("#email")
+              .siblings(".validation-status")
+              .text("X")
+              .addClass("invalid");
+          } else {
+            if (!isValidEmail(email)) {
+              isValid = false;
+              $("#email").addClass("invalid-input");
+              $("#email")
+                .siblings(".validation-status")
+                .text("X")
+                .addClass("invalid");
+            } else {
+              $("#email").removeClass("invalid-input").addClass("valid-input");
+              $("#email")
+                .siblings(".validation-status")
+                .text("V")
+                .removeClass("invalid")
+                .addClass("valid");
+            }
+          }
+          if (isValid) {
+            alert("Form is valid. Proceed with submission.");
+          }
+        });
+
+        $("#resetBtn").on("click", function () {
+          $("#registrationForm")[0].reset();
+          $(".validation-status").text("");
+          $("input, textarea").removeClass("valid-input invalid-input");
+        });
+        function isValidEmail(email) {
+          const emailRegex = /\S+@\S+\.\S+/;
+          return emailRegex.test(email);
+        }
+      });
+    </script>
+  </body>
+</html>
