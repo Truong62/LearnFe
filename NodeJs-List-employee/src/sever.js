@@ -18,9 +18,6 @@ app.use("/v1/api", apiRoutes);
 
 configViewEngine(app);
 
-// const silence = new Kitten({ name: "NNT" });
-// silence.save();
-
 (async () => {
   try {
     await configDB();
