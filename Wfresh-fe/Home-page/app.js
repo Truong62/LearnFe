@@ -61,19 +61,6 @@ submitGmail.onclick = (e) => {
   showThank.style.display = "block";
 };
 
-// var swiper = new Swiper(".mySwiper", {
-//   slidesPerView: 4,
-//   spaceBetween: 20,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-// });
-
 var swiper1 = new Swiper(".mySwiper", {
   slidesPerView: 4,
   spaceBetween: 20,
@@ -87,9 +74,22 @@ var swiper1 = new Swiper(".mySwiper", {
   },
 });
 
+// var swiper2 = new Swiper(".mySwiperitemProduct", {
+//   slidesPerView: 5,
+//   spaceBetween: 20,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     type: "fraction",
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
+
 var swiper2 = new Swiper(".mySwiperitemProduct", {
-  slidesPerView: 5,
-  spaceBetween: 20,
+  slidesPerView: 2,
+  spaceBetween: 10,
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",
@@ -98,15 +98,13 @@ var swiper2 = new Swiper(".mySwiperitemProduct", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  breakpoints: {
+    768: {
+      slidesPerView: 5,
+      spaceBetween: 20,
+    },
+  },
 });
-
-// var swiper3 = new Swiper(".mySwiperImg", {
-//   slidesPerView: 1,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     type: "fraction",
-//   },
-// });
 
 const filter = document.getElementById("filterRight");
 

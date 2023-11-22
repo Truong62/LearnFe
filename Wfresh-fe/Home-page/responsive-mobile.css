@@ -113,3 +113,20 @@ body {
   color: #3e4a5e;
   display: inline-block;
 }
+.cate-item {
+  padding: 0;
+  box-shadow: none;
+  margin: 20px 5px 0;
+}
+.cate-item img {
+  max-width: 130px;
+  min-height: 135px;
+}
+.cate-item h3 {
+  font-size: 13px;
+  font-weight: 400;
+}
+.bl-title h3 a {
+  font-size: 22px;
+  padding: 15px;
+}
