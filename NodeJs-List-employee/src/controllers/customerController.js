@@ -3,7 +3,13 @@ const {
   uploadmultipleFiles,
 } = require("../services/fileService");
 
-const { createCustomer } = require("../services/customerService");
+const {
+  createCustomer,
+  createCustomerArr,
+  getAllCustomer,
+  UpdateCustomer,
+  DeleteCustomer,
+} = require("../services/customerService");
 
 module.exports = {
   postCreateCustomer: async (req, res) => {
@@ -29,6 +35,44 @@ module.exports = {
     return res.status(200).json({
       EC: 0,
       data: customer,
+    });
+  },
+  postCreateArrCustomer: async (req, res) => {
+    let customers = await createCustomerArr(req.body.customers);
+    if (customers) {
+      return res.status(200).json({
+        EC: 0,
+        data: customers,
+      });
+    } else {
+      return res.status(200).json({
+        EC: -1,
+        data: customers,
+      });
+    }
+  },
+  GetCustomer: async (req, res) => {
+    let customers = await getAllCustomer();
+    return res.status(200).json({
+      EC: 0,
+      data: customers,
+    });
+  },
+  updateCustomer: async (req, res) => {
+    let { id, name, email, address, description } = req.body;
+    console.log(id, name, email, address, description);
+    let customers = await UpdateCustomer(id, name, email, address, description);
+    return res.status(201).json({
+      EC: 0,
+      data: customers,
+    });
+  },
+  deleteCustomer: async (req, res) => {
+    let id = req.body.id;
+    let result = await DeleteCustomer(id);
+    return res.status(201).json({
+      EC: 0,
+      data: result,
     });
   },
 };
