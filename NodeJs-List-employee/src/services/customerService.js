@@ -56,4 +56,15 @@ module.exports = {
       return null;
     }
   },
+  deleteArrCustomerSv: async (arr) => {
+    try {
+      let result = await Customer.delete({
+        _id: { $in: arr },
+      });
+      return result;
+    } catch (e) {
+      console.log(e);
+      return Null;
+    }
+  },
 };

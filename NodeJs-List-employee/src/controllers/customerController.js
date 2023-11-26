@@ -9,6 +9,7 @@ const {
   getAllCustomer,
   UpdateCustomer,
   DeleteCustomer,
+  deleteArrCustomerSv,
 } = require("../services/customerService");
 
 module.exports = {
@@ -74,5 +75,11 @@ module.exports = {
       EC: 0,
       data: result,
     });
+  },
+  deleteArrCustomer: async (req, res) => {
+    let ids = req.body.customerid;
+    console.log(ids);
+    let result = await deleteArrCustomerSv(ids);
+    return res.status(200).json({ EC: 0, data: result });
   },
 };
