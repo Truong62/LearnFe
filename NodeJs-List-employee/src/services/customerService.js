@@ -1,4 +1,5 @@
 const Customer = require("../models/customer");
+const aqp = require("api-query-params");
 
 module.exports = {
   createCustomer: async (customerData) => {
@@ -26,9 +27,18 @@ module.exports = {
       return null;
     }
   },
-  getAllCustomer: async () => {
+  getAllCustomer: async (limit, skip, queryString) => {
     try {
-      let results = await Customer.find({});
+      let results = "";
+      let offpage = (skip - 1) * limit;
+      if (limit && skip) {
+        const { filter, ship } = aqp(queryString);
+        delete filter.skip;
+        console.log(filter);
+        results = await Customer.find(filter).limit(limit).skip(offpage);
+      } else {
+        results = await Customer.find({});
+      }
       return results;
     } catch (error) {
       console.log(error);

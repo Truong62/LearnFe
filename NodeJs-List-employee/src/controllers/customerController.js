@@ -1,3 +1,5 @@
+const aqp = require("api-query-params");
+
 const {
   Uploadsingfile,
   uploadmultipleFiles,
@@ -53,7 +55,14 @@ module.exports = {
     }
   },
   GetCustomer: async (req, res) => {
-    let customers = await getAllCustomer();
+    let customers = null;
+    let limit = req.query.limit;
+    let skip = req.query.skip;
+    if (limit && skip) {
+      customers = await getAllCustomer(limit, skip, req.query);
+    } else {
+      customers = await getAllCustomer();
+    }
     return res.status(200).json({
       EC: 0,
       data: customers,
