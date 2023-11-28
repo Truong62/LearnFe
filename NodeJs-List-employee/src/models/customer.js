@@ -12,11 +12,11 @@ const customerSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    statics: {
-      findByNNT(name) {
-        return this.find({ name: new RegExp(name, "i") });
-      },
-    },
+    // statics: {
+    //   findByNNT(name) {
+    //     return this.find({ name: new RegExp(name, "i") });
+    //   },
+    // },
   }
 );
 
