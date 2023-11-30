@@ -25,6 +25,7 @@ module.exports = {
         .min(3)
         .max(30)
         .required(),
+      address: Joi.string(),
       phone: Joi.string()
         .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
       email: Joi.string()
@@ -35,7 +36,7 @@ module.exports = {
     let imgUrl = "";
     if (Error) {
       return res.status(200).json({
-        msg: resTes
+        msg: Error
       })
 
     } else {
