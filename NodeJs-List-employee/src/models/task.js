@@ -22,7 +22,7 @@ const taskSchema = new mongoose.Schema(
         },
         description: String,
         status: String,
-        saterDate: String,
+        starDate: String,
         endDate: String,
         usersInfo: userSchema,
         projectInfo: projectSchema

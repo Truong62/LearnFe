@@ -1,4 +1,5 @@
 const aqp = require("api-query-params");
+const Joi = require("joi")
 
 const {
   Uploadsingfile,
@@ -17,14 +18,36 @@ const {
 module.exports = {
   postCreateCustomer: async (req, res) => {
     let { name, address, phone, email, description } = req.body;
+
+    const schema = Joi.object({
+      name: Joi.string()
+        .alphanum()
+        .min(3)
+        .max(30)
+        .required(),
+      phone: Joi.string()
+        .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
+      email: Joi.string()
+        .email(),
+      description: Joi.string(),
+    })
+    let Error = schema.validate(req.body)
     let imgUrl = "";
-    //img
-    if (!req.files || Object.keys(req.files).length === 0) {
-      //   return res.status(400).send("No files were uploaded.");
+    if (Error) {
+      return res.status(200).json({
+        msg: resTes
+      })
+
     } else {
-      let resquire = await Uploadsingfile(req.files.image);
-      imgUrl = resquire.path;
+
+      if (!req.files || Object.keys(req.files).length === 0) {
+        //   return res.status(400).send("No files were uploaded.");
+      } else {
+        let resquire = await Uploadsingfile(req.files.image);
+        imgUrl = resquire.path;
+      }
     }
+    //img
 
     let customerData = {
       name,
