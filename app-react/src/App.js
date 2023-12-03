@@ -1,39 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import "./App.css"
+import YoutubeList from "./Component/Youtube/youtubeList";
+import Toggle from "./Component/state/Toggle";
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/youtube');
-        setData(response.data);
-        console.log(response.data)
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-
-  }, []);
-
+  // const name = "dddnnt";
   return (
-    <div className="App">
-      <h1>Thông tin Video từ API YouTube</h1>
-      {data && (
-        <div>
-          <h2>{data.title}</h2>
-          <p>{data.description}</p>
-          <p>{data.nameChannel}</p>
-          <img src={data.logo} alt="Logo kênh" />
-          <img src={data.thumnail} alt="Hình ảnh video" />
-          { }
-        </div>
-      )}
+    < div >
+      <YoutubeList>
+        {/* {name} */}
+      </YoutubeList>
+      <Toggle></Toggle>
     </div>
   );
 }
+
 
 export default App;
