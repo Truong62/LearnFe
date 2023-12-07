@@ -2,17 +2,16 @@ import React from 'react';
 // import Card from './Card';
 import styled from 'styled-components';
 
-const DPtest = styled.div`
-margin-top: 200px;
-    display: flex;
-    justify-content: center;
+const StyledCardList = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 90px 30px;
+    padding: 40px;
 `
 
-const Listcard = () => {
+const Listcard = (props) => {
     return (
-        <DPtest>
-
-        </DPtest>
+        <StyledCardList>{props.children}</StyledCardList>
     );
 };
 

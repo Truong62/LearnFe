@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 
 const StyledCard = styled.div`
     position: relative;
-    width: 400px;
+    /* width: 400px; */
 
 `;
 const CardImage = styled.div`
@@ -56,13 +56,19 @@ const CardFooter = styled.div`
 const CardTitle = styled.h3`
    color: black;
    font-size: 18px;
-   font-weight: 400;
+   font-weight: 700;
 `
 const CardValue = styled.span`
    color: black;
    font-size: 18px;
    font-weight: bold;
+   
+   ${props => props.secondary && css`
+   background: linear-gradient(86.88deg,#20e3b2 1.38%,#2cccff 64.35%,#fc2872 119.91%);
+   `};
+   ${props => !props.secondary && css`
    background: linear-gradient(86.88deg,#7d6aff 1.38%,#ffb86c 64.35%,#fc2872 119.91%);
+   `};
    color: transparent;
    -webkit-background-clip: text;
    background-clip: text;
@@ -72,7 +78,8 @@ const UserNames = styled.span`
     font-weight: 300;
     font-size: 16px;
 `
-const Card = () => {
+const Card = (props) => {
+    console.log(props.secondary)
     return (
         <StyledCard>
             <CardImage>
@@ -90,7 +97,7 @@ const Card = () => {
                 </CArdTop>
                 <CardFooter>
                     <CardTitle>MINECRAFT</CardTitle>
-                    <CardValue>12.000 $</CardValue>
+                    <CardValue secondary={props.secondary}>12.000 $</CardValue>
                 </CardFooter>
             </CardContent>
         </StyledCard>
