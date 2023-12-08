@@ -23,5 +23,20 @@ if (isset($_POST["submit"])) {
 }
 if ($upload0k === 1) {
     move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $_FILES["fileToUpload"]["name"]);
-    echo "xong";
+    echo "xong <br> <br> <br>";
 }
+
+
+$dir = opendir('../uploads');
+echo "$dir" . "<br>";
+while (($file = readdir($dir)) !== false) {
+    if (pathinfo($file, PATHINFO_EXTENSION) == 'jpg' || pathinfo($file, PATHINFO_EXTENSION) == 'png') {
+
+        $src = '../uploads/' . $file;
+
+        echo '<img style="height: 350px" src="' . $src . '">';
+        echo "$file" . "<br>";
+    }
+}
+
+closedir($dir);
