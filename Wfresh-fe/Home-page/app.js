@@ -79,20 +79,6 @@ var swiper1 = new Swiper(".mySwiper", {
     },
   },
 });
-
-// var swiper2 = new Swiper(".mySwiperitemProduct", {
-//   slidesPerView: 5,
-//   spaceBetween: 20,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     type: "fraction",
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-// });
-
 var swiper2 = new Swiper(".mySwiperitemProduct", {
   slidesPerView: 2,
   spaceBetween: 10,
