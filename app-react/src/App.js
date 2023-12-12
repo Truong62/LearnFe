@@ -14,7 +14,7 @@ function App() {
   return (
     < div >
       {/* <GlobalStyle></GlobalStyle>
-      <YoutubeList></YoutubeList>
+      <YoutubeList></YoutubeList>s
       <Toggle></Toggle>
       <Game></Game> */}
       {/* <Listcard>
@@ -29,7 +29,7 @@ function App() {
       {/* <Photo></Photo> */}
       {/* <Count></Count> */}
       {/* <HackerNew></HackerNew> */}
-      <App></App>
+      <Inputs></Input>
     </div>
   );
 }
