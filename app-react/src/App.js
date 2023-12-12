@@ -1,5 +1,5 @@
 import "./App.css"
-import HackerNew from "./Component/getApiHacker/hackerNew";
+// import HackerNew from "./Component/getApiHacker/hackerNew";
 // import Count from "./Count";
 // import Card from "./Component/Card/Card";
 // import Listcard from "./Component/Card/Listcard";
@@ -28,7 +28,8 @@ function App() {
       {/* <UseReducer></UseReducer> */}
       {/* <Photo></Photo> */}
       {/* <Count></Count> */}
-      <HackerNew></HackerNew>
+      {/* <HackerNew></HackerNew> */}
+      <App></App>
     </div>
   );
 }
