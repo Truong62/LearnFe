@@ -1,15 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 
 const Input = () => {
-    const divRef = useRef;
+    const divRef = useRef();
+    const inputRef = useRef();
 
     useEffect(() => {
-        console.log(divRef.current)
-    })
+        if(inputRef.current) inputRef.current.focus()
+    }, [])
 
     return (
         <div className='input-div' ref={divRef}>
-            <h1>ahahhah</h1>
+            <input 
+            type="text" 
+            ref={inputRef}
+            placeholder='auto focus' 
+            className='border inline-block p-5 border-gray-200 focus:border-blue-400 focus:outline-none'/>
         </div>
     );
 };
