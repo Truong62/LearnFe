@@ -19,7 +19,7 @@ input:focus {
   line-height: 23px;
   color: aliceblue;
 }
-.list-tad-header samp i{
+.list-tad-header samp i {
   color: rgb(251, 218, 27);
   margin: 8px;
 }
@@ -86,7 +86,7 @@ input:focus {
   font-weight: 300;
   margin: 0 8px;
 }
-.cart-header span {
+.cart-header > div > span {
   border-radius: 3px;
   background-color: gold;
   padding: 5px;
@@ -94,14 +94,33 @@ input:focus {
   color: black;
   font-weight: 300;
 }
-.header-bottom-2{
-    padding: 15px;
-    justify-content: center;
-    display: flex;
-    background-color: rgb(59 130 246);
+.header-bottom-2 {
+  padding: 15px;
+  justify-content: center;
+  display: flex;
+  background-color: rgb(59 130 246);
 }
-.tab-header-bt2 h4{
-    color: white;
-    font-weight: 100;
-    margin: 0 25px;
+.tab-header-bt2 h4 {
+  color: white;
+  font-weight: 100;
+  margin-right:  25px;
+  margin-left: 10px;
+}
+.tab-header-bt {
+  display: flex;
+  align-items: center;
+}
+.tab-header-bt i,.cart-header i {
+  font-size: 25px;
+  color: white;
+  margin: 6px;
+}
+.tab-header-bt2 {
+  display: flex;
+  align-items: center;
+}
+.tab-header-bt2 i{
+ color: white;
+ font-size: 25px;
+ font-weight: 500;
 }
