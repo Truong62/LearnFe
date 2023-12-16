@@ -5,7 +5,7 @@ import Search from "./Component/API/Search";
 function App() {
   return (
     < div >
-    <Search></Search>
+      <Search></Search>
     </div>
   );
 }
