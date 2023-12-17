@@ -1,14 +1,26 @@
 import "./App.css"
-import Search from "./Component/API/Search";
+import Tooltip from "./Component/Tooltip";
+import { ErrorBoundary } from "react-error-boundary";
 
+function fallbackRender({ error, resetErrorBoundary }) {
 
-function App() {
   return (
-    < div >
-      <Search></Search>
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{ color: "red" }}>{error.message}</pre>
     </div>
   );
 }
+
+function App() {
+  return (
+    <ErrorBoundary FallbackComponent={fallbackRender}>
+      <Tooltip text="Hover me">Lorem ipsum dolor sit amet\.</Tooltip>
+    </ErrorBoundary >
+
+  );
+}
+
 
 
 export default App;
