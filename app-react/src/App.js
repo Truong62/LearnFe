@@ -1,24 +1,14 @@
 import "./App.css"
-import Tooltip from "./Component/Tooltip";
-import { ErrorBoundary } from "react-error-boundary";
+import Photolist from "./Component/Context/Photolist";
+import { GalleryProvider } from "./Component/Context/gallery-context";
 
-function fallbackRender({ error, resetErrorBoundary }) {
-
-  return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre style={{ color: "red" }}>{error.message}</pre>
-    </div>
-  );
-}
 
 function App() {
-  return (
-    <ErrorBoundary FallbackComponent={fallbackRender}>
-      <Tooltip text="Hover me">Lorem ipsum dolor sit amet\.</Tooltip>
-    </ErrorBoundary >
-
-  );
+ <div>
+   <GalleryProvider>
+  </GalleryProvider>
+    <Photolist></Photolist>
+ </div>
 }
 
 
