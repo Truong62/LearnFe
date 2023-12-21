@@ -1,16 +1,25 @@
-import "./App.css"
-import Photolist from "./Component/Context/Photolist";
-import { GalleryProvider } from "./Component/Context/gallery-context";
-
+import React from 'react';
+import './App.css';
+import Blog from './Router/Blog';
+import Nav from './Router/Nav';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Profile from './Router/Profile';
 
 function App() {
- <div>
-   <GalleryProvider>
-  </GalleryProvider>
-    <Photolist></Photolist>
- </div>
+  return (
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path='?' element={<Nav></Nav>}>
+            <Route path="/" element={<div>Home</div>} />
+            <Route path="/pr" element={<Blog />} />
+            <Route path="/ls" element={<Profile />} />
+          </Route>
+            <Route path="*" element={<>"This is 404"</>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
-
-
 
 export default App;
