@@ -31,8 +31,8 @@ const DropDown = () => {
             {show &&
                 (<div className="border border-gay-200 rounded-lg absolute top-full left-0 w-full bg-yellow-50">
                     <div className="p-5 cursor-pointer">Javascrip</div>
-                    <div className="p-5 cursor-pointer">React JS</div>
-                    <div className="p-5 cursor-pointer">VueJS</div>
+                    <div className="p-5 cursor-pointer">Ascending</div>
+                    <div className="p-5 cursor-pointer">Hot</div>
                 </div>
                 )}
         </div>
