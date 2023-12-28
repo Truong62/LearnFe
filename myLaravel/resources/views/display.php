@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Dữ liệu từ bảng TenBang</h1>
-    <ul>
+    <ul>php artisan migrate
         @foreach($du_lieu as $item)
             <li>{{ $item->name }}</li>
         @endforeach
