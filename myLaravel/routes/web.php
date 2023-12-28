@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\HelloController;
-
-Route::get('/hello', [HelloController::class, 'index']);
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/show', [StudentController::class, 'hienThiDuLieu'])->name('hien-thi-du-lieu');
