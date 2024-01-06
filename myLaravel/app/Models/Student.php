@@ -19,4 +19,5 @@ class Student extends Model
         'email', 
         'phone',
     ];
+    public $timestamps = false;
 }

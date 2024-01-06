@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+
 class StudentController extends Controller
 {
     public function create()
     {
         return view('student.create');
     }
-    public function store(Request $request){
-        
+    public function store(Request $request)
+    {
+
         $data = $request->validate([
             'full_name' => 'required',
             'dob' => 'required',
@@ -21,9 +23,38 @@ class StudentController extends Controller
             'phone' => 'required',
             'status' => 'required',
         ]);
-        var_dump (Student::create($data));
-        die;
-        
-        return "success create Student";
+        Student::create($data);
+        $students = Student::all();
+        return redirect('/students')->with('success', 'Student created successfully!');
     }
+    public function index()
+    {
+        $students = Student::all();
+        return view('student.index', compact('students'));
+    }
+    public function update(Request $request, $id)
+    {
+        $student = Student::findOrFail($id);
+        
+        $data = $request->all();
+        $student->update($data);
+
+        $students = Student::all();
+        return redirect('/students')->with('success', 'Student update successfully!');
+    }
+
+    public function edit($id)
+    {
+        $students = Student::findOrFail($id);
+
+        return view('student.edit', compact('students'));
+    }
+
+    public function delete($id){
+        $student = Student::findOrFail($id);
+
+        $student->delete();
+        return redirect('/students')->with('success', 'success delete user!');
+    }
+
 }

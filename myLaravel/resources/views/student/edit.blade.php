@@ -22,36 +22,37 @@
 
     <body>
         <div class="container p-5">
-            <h2 class="text-center">Create Studens</h2>
-            <form action="/students/store" method="post">
-            @csrf
+            <h2 class="text-center">Edit Studen</h2>
+            <form action="/students/update/{{ $students->id }}" method="post">
+                @method('PUT')
+                @csrf
                 <div class="mb-3">
                     <label for="exampleInputName" class="form-label">Name</label>
-                    <input type="text" name="full_name" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                    <input type="text" name="full_name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" value="{{ $students->full_name }}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputbirthday1" class="form-label">Birthday</label>
-                    <input type="text" name="dob" class="form-control" id="exampleInputbirthday1">
+                    <input type="text" name="dob" class="form-control" id="exampleInputbirthday1" value="{{$students->dob}}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputaddress1" class="form-label">Address</label>
-                    <input type="text" name="address" class="form-control" id="exampleInputaddress1">
+                    <input type="text" name="address" class="form-control" id="exampleInputaddress1" value="{{$students->address}}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputclass_name1" class="form-label">Class name</label>
-                    <input type="text" name="class_name" class="form-control" id="exampleInputclass_name1">
+                    <input type="text" name="class_name" class="form-control" id="exampleInputclass_name1" value="{{$students->class_name}}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputemail1" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputemail1">
+                    <input type="email" name="email" class="form-control" id="exampleInputemail1" value="{{$students->email}}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputphone1" class="form-label">Phone</label>
-                    <input type="text" name="phone" class="form-control" id="exampleInputphone1">
+                    <input type="text" name="phone" class="form-control" id="exampleInputphone1" value="{{$students->phone}}">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputstatus1" class="form-label">Status</label>
-                    <input type="text" name="status" class="form-control" id="exampleInputstatus1">
+                    <input type="text" name="status" class="form-control" id="exampleInputstatus1" value="{{$students->status}}">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button class="btn btn-secondary"><a href="/students" class="text-dark text-decoration-none">BACK</a></button>

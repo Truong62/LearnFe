@@ -10,13 +10,13 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
-            $table->date('dob');
+            $table->string('dob');
             $table->string('address');
             $table->string('class_name');
-            $table->boolean('status')->default(true); // Status mặc định là true
-            $table->string('email')->unique();
-            $table->string('english_class_name'); // Tên lớp học bằng tiếng Anh
-            $table->timestamps();
+            $table->string('status'); 
+            $table->string('email');
+            $table->string('phone'); 
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
