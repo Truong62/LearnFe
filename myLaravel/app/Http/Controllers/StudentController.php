@@ -24,13 +24,17 @@ class StudentController extends Controller
             'status' => 'required',
         ]);
         Student::create($data);
-        $students = Student::all();
         return redirect('/students')->with('success', 'Student created successfully!');
     }
-    public function index()
+    public function index(Request $request)
     {
+        $searchKeyword = $request->input('search'); 
+    if ($searchKeyword) {
+        $students = Student::where('full_name', $searchKeyword)->get();
+    } else {
         $students = Student::all();
-        return view('student.index', compact('students'));
+    }
+    return view('student.index', compact('students'));
     }
     public function update(Request $request, $id)
     {

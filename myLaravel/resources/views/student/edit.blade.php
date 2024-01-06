@@ -24,7 +24,6 @@
         <div class="container p-5">
             <h2 class="text-center">Edit Studen</h2>
             <form action="/students/update/{{ $students->id }}" method="post">
-                @method('PUT')
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputName" class="form-label">Name</label>
