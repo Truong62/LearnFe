@@ -1,34 +1,12 @@
 <?php
 
-use App\Http\Controllers\StudentController;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Route;
-use Termwind\Components\Dd;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {
-    $test =  DB::select("select * from students");
-    dd($test);
+    return view('welcome');
 });
-Route::get('/show', [StudentController::class, 'hienThiDuLieu'])->name('hien-thi-du-lieu');
-Route::get('/connection', function () {
-    try {
-        DB::connection();
+Route::get('/students/create', [StudentController::class, 'create']);
+Route::post('/students/store', [StudentController::class, 'store']); // Đổi URL cho phương thức POST
 
-        return view('connection.success');
-    } catch (Exception $e) {
-        return view('connection.fail', [
-            'error' => $e->getMessage(),
-        ]);
-    }
-});
