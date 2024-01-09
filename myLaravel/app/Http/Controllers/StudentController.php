@@ -28,18 +28,22 @@ class StudentController extends Controller
     }
     public function index(Request $request)
     {
-        $searchKeyword = $request->input('search'); 
-    if ($searchKeyword) {
-        $students = Student::where('full_name', $searchKeyword)->get();
-    } else {
-        $students = Student::all();
-    }
-    return view('student.index', compact('students'));
+        $searchKeyword = $request->input('search');
+        if ($searchKeyword) {
+            $students = Student::where('full_name', 'like', '%' . $searchKeyword . '%')->get();
+        } else {
+            $students = Student::all();
+        }
+        if ($request->expectsJson()) {
+            return $students; 
+        } else {
+            return view('student.index', compact('students')); 
+        }
     }
     public function update(Request $request, $id)
     {
         $student = Student::findOrFail($id);
-        
+
         $data = $request->all();
         $student->update($data);
 
@@ -54,11 +58,11 @@ class StudentController extends Controller
         return view('student.edit', compact('students'));
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $student = Student::findOrFail($id);
 
         $student->delete();
         return redirect('/students')->with('success', 'success delete user!');
     }
-
 }

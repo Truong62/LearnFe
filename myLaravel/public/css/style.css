@@ -1,0 +1,64 @@
+/* body{
+    background-color: aquamarine;
+} */
+* {
+    font-family: "Barlow", sans-serif;
+    font-family: "DM Sans", sans-serif;
+    font-family: "Kanit", sans-serif;
+}
+body {
+    background-color: rgb(255, 240, 221);
+}
+.base {
+    display: grid;
+    place-items: center;
+    height: 900px;
+}
+.img-banner {
+    width: 1280px;
+    height: 720px;
+    object-fit: cover;
+    position: relative;
+    box-shadow: 9px 9px 100px 9px rgba(70, 52, 67, 0.5);
+    background: linear-gradient(to right, #2c3e5033, #bdc3c733),
+        url("https://www.skyarchitectstudio.com.au/wp-content/uploads/2021/04/CHADDY-CONCRETE-HOUSE-FEATURED.jpg");
+}
+.intro {
+    position: absolute;
+    font-size: 100px;
+    font-weight: 700;
+    color: white;
+    margin-top: 25px;
+    text-shadow: 0px 0px 90px rgba(0, 0, 0, 0.5);
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+}
+.logo {
+    position: absolute;
+    font-size: 100px;
+    color: white;
+    margin-top: 25px;
+    text-shadow: 0px 0px 90px rgba(0, 0, 0, 0.5);
+    left: 65%;
+    top: 40%;
+    transform: translateX(-50%);
+    font-weight: 900;
+    width: 100%;
+}
+.next {
+    cursor: pointer;
+    position: absolute;
+    padding: 7px 35px;
+    background-color: #22c8e5;
+    bottom: 25%;
+    box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.5);
+    right: 50%;
+}
+.next a > .bi{
+    color: white;
+    font-size: 30px;
+}
+.next:hover{
+    background: linear-gradient(to right, #2c3e5090, #bdc3c790);
+}
