@@ -62,3 +62,14 @@ body {
 .next:hover{
     background: linear-gradient(to right, #2c3e5090, #bdc3c790);
 }
+.login{
+    padding: 20px;
+    right:45px;
+    position: fixed;
+    top: 5%;
+    background-color: gold;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0px 0px 50px rgba(0,0,0, 0.5);
+    border: black 1px solid;
+}
