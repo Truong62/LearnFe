@@ -22,9 +22,10 @@ class UserController extends Controller
         $user = User::where('nameUser', $data['nameUser'])->first();
     
         if ($user && ($data['password'] == $user->password)) {
-            return redirect()->route('students');
+            auth()->login($user);
+            return redirect()->route('students')->with('success', 'Login successful');
         } else {
-            return redirect('/login')->with('error', 'fuck you');
+            return redirect('/login')->with('error', 'Errorr');
         }
     }
 }
