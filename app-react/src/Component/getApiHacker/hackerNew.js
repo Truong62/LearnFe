@@ -25,8 +25,8 @@ const HackerNew = () => {
     }, [query])
     return (
         <div>
-            <input type="text" className="border border-green-500 text-back p-5 mb-5" onChange={handleUpdate} defaultValue={query} />
-            {loadding && (<div className="loadding w-8 h-8 rounded-full border-blue-500 border-4 border-r-4 border-r-transparent animate-spin"></div>)}
+            <input type="text" className="p-5 mb-5 border border-green-500 text-back" onChange={handleUpdate} defaultValue={query} />
+            {loadding && (<div className="w-8 h-8 border-4 border-r-4 border-blue-500 rounded-full loadding border-r-transparent animate-spin"></div>)}
             {!loadding && hits.length > 0 && hits.map((item, index) => (
                 <h3 key={item.title}>{item.title}</h3>
             ))}

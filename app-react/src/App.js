@@ -8,6 +8,7 @@ import Search from './Component/API/Search';
 import Tooltip from './Component/Tooltip';
 import Photo from './Photo';
 import DropDown from './Component/Input/DropDown';
+import HackerNew from './Component/getApiHacker/hackerNew';
 
 function App() {
   return (
@@ -23,10 +24,10 @@ function App() {
     //     </Routes>
     //   </div>
     // </BrowserRouter>
-  <>
-     <DropDown></DropDown>
+    <>
+      <HackerNew></HackerNew>
 
-  </>
+    </>
   );
 }
 
