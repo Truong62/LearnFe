@@ -176,4 +176,59 @@ const b10 = () => {
         strings.map(item => item.length > 20 ? item.slice(0, 20) + "..." : item)
     )
 }
-b10()
+// b10()
+
+const b11 = (nums) => {
+    var seen = {};
+
+    for (let num of nums) {
+        if (seen[num]) {
+            return true;
+        } else {
+            seen[num] = true;
+        }
+        console.log(seen)
+    }
+
+    return false;
+}
+
+// console.log(b11([0, 1, 2, 3, 1]))
+
+
+var obj = {
+    0: 2,
+    1: 3,
+    5: 4,
+    8: 1,
+    10: 3
+}
+
+var singleNumber = function (nums) {
+    var see = 0
+    for (let num of nums) {
+        see ^= num
+        console.log(see)
+    }
+    return see
+};
+
+// console.log("--------" + singleNumber([2, 2, 8, 1, 1]))
+
+const intersection = (nums1, nums2) => {
+    const set1 = new Set(nums1);
+    console.log(set1)
+
+    const result = nums2.filter(num => {
+        if (set1.has(num)) {
+            set1.delete(num);
+            console.log(set1)
+            return true;
+        }
+        return false;
+    });
+    // console.log(result)
+
+    return result;
+};
+console.log(intersection([1, 2, 3, 4, 5], [3, 4, 3, 9, 7, 8]))
