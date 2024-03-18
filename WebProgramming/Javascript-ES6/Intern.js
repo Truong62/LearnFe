@@ -217,18 +217,18 @@ var singleNumber = function (nums) {
 
 const intersection = (nums1, nums2) => {
     const set1 = new Set(nums1);
-    console.log(set1)
+    const resultArray = [];
 
-    const result = nums2.filter(num => {
+    nums2.forEach(num => {
         if (set1.has(num)) {
-            set1.delete(num);
-            console.log(set1)
-            return true;
+            resultArray.push(num);
         }
-        return false;
     });
-    // console.log(result)
 
-    return result;
+    resultArray.forEach(num => {
+        set1.delete(num);
+    });
+
+    return resultArray;
 };
-console.log(intersection([1, 2, 3, 4, 5], [3, 4, 3, 9, 7, 8]))
+console.log(intersection([4, 9, 5], [9, 4, 9, 8, 4]))
